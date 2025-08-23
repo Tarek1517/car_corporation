@@ -1,39 +1,51 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 const cars = [
-  { name: "City", image: "/images/city-new-web.png" },
-  { name: "Civic Turbo", image: "/images/civic_new_banner_2021.png" },
-  { name: "Accord Turbo", image: "/images/accord-new-web.png" },
-  { name: "HR-V", image: "/images/hrv-2.png" },
-  { name: "New BR-V", image: "/images/brv_slider_new.png" },
-  { name: "Honda CR-V", image: "/images/crv-new-web.png" },
-  { name: "CR-V Turbo", image: "/images/crv-2024.png" },
+  { name: "Toyota RAV4", image: "/images/Rav4.jpeg" },
+  { name: "Toyota Corolla Cross", image: "/images/cross 1.jpeg" },
+  { name: "Toyota Harrier", image: "/images/Harrier.jpeg" },
+  { name: "Corolla Cross", image: "/images/crossred.jpeg" },
+  { name: "Toyota Cross", image: "/images/toyotacorollacross.jpeg" },
+  { name: "Toyota NOAH", image: "/images/noah.jpeg" },
+  { name: "Honda Civic", image: "/images/civik2.png" },
 ];
+
+const activeIndex = ref<number | null>(null);
+
+const getCarName = (carName: string, index: number) => {
+  if (activeIndex.value === null) return carName;
+  if (index === activeIndex.value) return carName;
+
+  const words = carName.split(" ");
+  return words.slice(0, 2).join(" ");
+};
 </script>
 
 <template>
   <section class="w-full relative overflow-hidden">
-    <!-- Cars Row -->
     <div class="flex w-full h-auto">
       <div
         v-for="(car, index) in cars"
         :key="index"
         class="group relative h-full flex flex-col overflow-hidden transition-all duration-500 flex-1 hover:flex-[6] hover:z-10 min-w-0"
+        @mouseenter="activeIndex = index"
+        @mouseleave="activeIndex = null"
       >
-        <!-- Car Image Container with focus on front of car -->
-        <div class="h-[500px] w-full overflow-hidden relative">
+        <!-- Car Image -->
+        <div class="h-[550px] w-full overflow-hidden relative">
           <img
             :src="car.image"
             :alt="car.name"
             class="h-full w-auto object-cover object-[10%_center] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:object-[10%_center] group-hover:scale-[1.15] brightness-95 group-hover:brightness-100"
           />
-          
         </div>
 
         <!-- Red Bar with Car Name -->
         <div
           class="bg-gradient-to-r from-red-600 to-red-500 text-white text-center py-3 text-sm md:text-base font-semibold tracking-wide transition-all duration-500 group-hover:py-5"
         >
-          {{ car.name }}
+          {{ getCarName(car.name, index) }}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
-    <HomeHeroSection />
-    
-    <!-- <HomeFlashSaleSection /> -->
+  <HomeHeroSection />
+  <HomeProcessSection />
+  <HomeProductsSection />
+  <!-- <HomeFlashSaleSection /> -->
 </template>
