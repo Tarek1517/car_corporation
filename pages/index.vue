@@ -3,5 +3,7 @@
   <HomeHeroSection />
   <HomeProcessSection />
   <HomeProductsSection />
+  <HomeBrandSection />
+  <HomeCounterSection />
   <!-- <HomeFlashSaleSection /> -->
 </template>

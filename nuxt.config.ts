@@ -2,14 +2,12 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-15',
+  compatibilityDate: "2025-05-15",
   devtools: { enabled: false },
 
   vite: {
-   plugins: [
-     tailwindcss(),
-   ],
- },
+    plugins: [tailwindcss()],
+  },
 
-  modules: ["@nuxt/icon", "nuxt-swiper",'@nuxt/ui'],
-})
+  modules: ["@nuxt/icon", "nuxt-swiper", "@nuxt/ui", "@nuxt/image"],
+});
