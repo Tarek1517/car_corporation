@@ -1,88 +1,147 @@
 <template>
-    <footer class="bg-gray-900 text-white pt-12 pb-8 mt-16">
-      <div class="container mx-auto px-4 md:px-8">
-     
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
-  
-          <div>
-            <h3 class="text-white font-semibold mb-4">Company</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:text-white">About Us</a></li>
-              <li><a href="#" class="hover:text-white">Careers</a></li>
-              <li><a href="#" class="hover:text-white">Contact</a></li>
-              <li><a href="#" class="hover:text-white">Blog</a></li>
-            </ul>
+  <footer class="bg-gray-900 text-gray-300 pt-16 pb-10 mt-20">
+    <div class="container mx-auto px-6 lg:px-12">
+      <!-- Top Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+        
+        <!-- Brand & About -->
+        <div>
+          <NuxtLink to="/" class="flex items-center gap-2 mb-6">
+            <img src="/images/logo.jpg" alt="ShopEase" class="h-12 rounded-lg" />
+          </NuxtLink>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Transforming the way you shop with quality products, seamless
+            experience, and customer satisfaction.
+          </p>
+          <div class="flex gap-4">
+            <a href="#"><Icon name="logos:facebook" class="text-2xl hover:text-primary" /></a>
+            <a href="#"><Icon name="skill-icons:instagram" class="text-2xl hover:text-primary" /></a>
+            <a href="#"><Icon name="logos:youtube-icon" class="text-2xl hover:text-primary" /></a>
+            <a href="#"><Icon name="devicon:linkedin" class="text-2xl hover:text-primary" /></a>
           </div>
-  
-    
+        </div>
+
+        <!-- Quick Links -->
+        <div class="grid grid-cols-2 gap-8">
           <div>
-            <h3 class="text-white font-semibold mb-4">Help</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:text-white">FAQs</a></li>
-              <li><a href="#" class="hover:text-white">Shipping</a></li>
-              <li><a href="#" class="hover:text-white">Returns</a></li>
-              <li><a href="#" class="hover:text-white">Order Tracking</a></li>
+            <h3 class="text-white font-semibold text-lg mb-5">Company</h3>
+            <ul class="space-y-3">
+              <li><NuxtLink to="/about" class="hover:text-primary">About Us</NuxtLink></li>
+              <li><NuxtLink to="/Extra/AppDownload" class="hover:text-primary">App Download</NuxtLink></li>
+              <li><NuxtLink to="/careers" class="hover:text-primary">Careers</NuxtLink></li>
+              <li><NuxtLink to="/contact" class="hover:text-primary">Contact</NuxtLink></li>
+              <li><NuxtLink to="/blog" class="hover:text-primary">Blog</NuxtLink></li>
             </ul>
-          </div>
-  
-   
-          <div>
-            <h3 class="text-white font-semibold mb-4">Policies</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-              <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-              <li><a href="#" class="hover:text-white">Seller Terms</a></li>
-            </ul>
-          </div>
-  
-    
-          <div>
-            <h3 class="text-white font-semibold mb-4">Download App</h3>
-            <div class="flex gap-3">
-              <a href="#">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" class="h-12 rounded" />
-              </a>
-              <a href="#">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="h-12 rounded" />
-              </a>
-            </div>
           </div>
 
+          <div>
+            <h3 class="text-white font-semibold text-lg mb-5">Support</h3>
+            <ul class="space-y-3">
+              <li><NuxtLink to="/faq" class="hover:text-primary">FAQs</NuxtLink></li>
+              <li><NuxtLink to="/shipping" class="hover:text-primary">Shipping</NuxtLink></li>
+              <li><NuxtLink to="/returns" class="hover:text-primary">Returns</NuxtLink></li>
+              <li><NuxtLink to="/tracking" class="hover:text-primary">Order Tracking</NuxtLink></li>
+            </ul>
+          </div>
         </div>
-  
-      
-        <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row md:justify-between items-center gap-6">
-      
-          <div class="flex gap-5">
-            <a href="#" class="hover:text-primary text-white">
-              <img src="https://unpkg.com/lucide-static/icons/facebook.svg" alt="Facebook" class="w-5 h-5" />
-            </a>
-            <a href="#" class="hover:text-primary text-white">
-              <img src="https://unpkg.com/lucide-static/icons/twitter.svg" alt="Twitter" class="w-5 h-5" />
-            </a>
-            <a href="#" class="hover:text-primary text-white">
-              <img src="https://unpkg.com/lucide-static/icons/instagram.svg" alt="Instagram" class="w-5 h-5" />
-            </a>
-            <a href="#" class="hover:text-primary text-white">
-              <img src="https://unpkg.com/lucide-static/icons/youtube.svg" alt="YouTube" class="w-5 h-5" />
-            </a>
-          </div>  
-          <div class="flex gap-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="h-6" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" class="h-6" />           
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-6" />
-           
-            <img src="https://sslcommerz.com/wp-content/uploads/2021/11/logo.png" alt="SSLCommerz" class="h-6"/>
-       
-         
-   
-        </div>
-   
-          <p class="text-xs text-white text-center md:text-right">
-            &copy; 2025 EcomStore. All rights reserved.
-          </p>
+
+        <!-- Policies & Newsletter -->
+        <div>
+          <h3 class="text-white font-semibold text-lg mb-5">Policies</h3>
+          <ul class="space-y-3 mb-8">
+            <li><NuxtLink to="/terms" class="hover:text-primary">Terms of Service</NuxtLink></li>
+            <li><NuxtLink to="/privacy" class="hover:text-primary">Privacy Policy</NuxtLink></li>
+            <li><NuxtLink to="/seller-terms" class="hover:text-primary">Seller Terms</NuxtLink></li>
+          </ul>
+
+          <!-- Newsletter -->
+          <h4 class="text-white font-medium mb-3">Subscribe to our newsletter</h4>
+          <div class="flex gap-2">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-sm text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-primary flex-grow"
+            />
+            <button
+              class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+            >
+              Subscribe
+            </button>
+          </div>
         </div>
       </div>
-    </footer>
-  </template>
-  
+
+      <!-- Divider -->
+      <div class="border-t border-gray-700 my-8"></div>
+
+      <!-- Bottom Section -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <!-- Copy -->
+        <p class="text-gray-500 text-sm text-center md:text-left">
+          &copy; 2025 CarCorporationBD. All rights reserved.
+        </p>
+
+        <!-- App Download & Payment -->
+        <div class="flex flex-col sm:flex-row items-center gap-6">
+          <!-- App Badges -->
+          <div class="flex gap-3">
+            <a href="#" class="bg-black p-2 rounded-lg hover:opacity-90">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" class="h-8" />
+            </a>
+            <a href="#" class="bg-black p-2 rounded-lg hover:opacity-90">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="h-8" />
+            </a>
+          </div>
+
+          <!-- Payment Icons -->
+          <div class="flex gap-3">
+            <div class="bg-white p-2 rounded-lg shadow">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-6" />
+            </div>
+            <div class="bg-white p-2 rounded-lg shadow">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-6" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script setup>
+// No script needed
+</script>
+
+
+<style scoped>
+/* Smooth transitions for all interactive elements */
+a,
+button,
+input {
+  transition: all 0.2s ease;
+}
+
+/* Custom focus styles */
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+</style>
+
+
+<style scoped>
+/* Smooth transitions for all interactive elements */
+a,
+button,
+input {
+  transition: all 0.2s ease;
+}
+
+/* Custom focus styles */
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+</style>

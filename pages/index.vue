@@ -5,5 +5,7 @@
   <HomeProductsSection />
   <HomeBrandSection />
   <HomeCounterSection />
-  <!-- <HomeFlashSaleSection /> -->
+  <HomeAppSection />
+  <HomeBlogSection />
+  
 </template>
