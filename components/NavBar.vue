@@ -24,8 +24,8 @@ const menus = [
   {
     title: "Services",
     items: [
-      { title: "Car Financing", icon: "mdi:finance" },
-      { title: "Insurance", icon: "mdi:shield-check" },
+      { title: "Car Financing", icon: "mdi:finance", to:"/carFinalice/carMoney" },
+      { title: "Insurance", icon: "mdi:shield-check", to:"/Inssurance/inssurance" },
       { title: "Inspection", icon: "mdi:clipboard-check" },
       { title: "Shipping", icon: "mdi:truck-delivery" },
     ],
@@ -33,10 +33,10 @@ const menus = [
   {
     title: "About Us",
     items: [
-      { title: "Our Story", icon: "mdi:book-open" },
-      { title: "Showrooms", icon: "mdi:storefront" },
-      { title: "Testimonials", icon: "mdi:message-text" },
-      { title: "Contact Us", icon: "mdi:phone" },
+      { title: "Our Story", icon: "mdi:book-open", to:"/about/our-story" },
+      { title: "Showrooms", icon: "mdi:storefront", to:"/showrooms/showrooms" },
+      { title: "Testimonials", icon: "mdi:message-text", to:"/testimonial/testimonial" },
+      { title: "Contact Us", icon: "mdi:phone", to:"/contact-us/contact" },
     ],
   },
 ];
@@ -89,7 +89,7 @@ const menus = [
                   <NuxtLink
                     v-for="(item, i) in menu.items"
                     :key="i"
-                    to="#"
+                    :to="item.to || '#'"
                     class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group"
                   >
                     <Icon
