@@ -36,7 +36,6 @@ const menus = [
       { title: "Our Story", icon: "mdi:book-open", to:"/about/our-story" },
       { title: "Showrooms", icon: "mdi:storefront", to:"/showrooms/showrooms" },
       { title: "Testimonials", icon: "mdi:message-text", to:"/testimonial/testimonial" },
-      { title: "Contact Us", icon: "mdi:phone", to:"/contact-us/contact" },
     ],
   },
 ];
@@ -59,6 +58,11 @@ const menus = [
 
         <!-- Desktop Menu -->
         <nav class="hidden lg:flex items-center space-x-1">
+          <div class="relative">
+            <NuxtLink to="/" class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
+              <span class="relative z-10">Home</span>
+            </NuxtLink>
+          </div>
           <div
             v-for="(menu, index) in menus"
             :key="index"
@@ -105,6 +109,11 @@ const menus = [
                 </div>
               </div>
             </transition>
+          </div>
+                      <div class="relative">
+            <NuxtLink to="/contact-us/contact"  class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
+              <span class="relative z-10">Contact Us</span>
+            </NuxtLink>
           </div>
         </nav>
 

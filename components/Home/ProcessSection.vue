@@ -7,6 +7,9 @@ const goToServices = () => {
 const goToContacts = () => {
   router.push('/contact-us/contact')
 }
+const goToCarAuction = () => {
+  router.push('/carAuction')
+}
 </script>
 
 <template>
@@ -104,13 +107,13 @@ const goToContacts = () => {
             >
               <Icon
                 name="mdi:arrow-right"
-                class="text-secondary transition-all duration-500 transform group-hover:text-primary group-hover:translate-x-1"
+                class="text-secondary transition-all duration-500 transform group-hover:text-primary group-hover:translate-x-1 cursor-pointer"
               />
             </div>
-            <span
-              class="text-primary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-0 opacity-100  hover:opacity-100"
-              >Learn more</span
-            >
+            <span @click="goToCarAuction"
+              class="text-primary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-0 opacity-100  hover:opacity-100 cursor-pointer">
+              Learn more
+              </span>
           </div>
         </div>
 

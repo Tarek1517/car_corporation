@@ -132,7 +132,6 @@
                 class="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-r from-primary to-secondary rounded-2xl shadow-lg -z-10">
               </div>
             </div>
-
             <div>
               <div class="mb-4 flex items-center justify-center">
                 <div class="h-0.5 w-8 bg-primary mr-3"></div>
