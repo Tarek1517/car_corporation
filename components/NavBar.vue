@@ -26,7 +26,7 @@ const menus = [
     items: [
       { title: "Car Financing", icon: "mdi:finance", to:"/carFinalice/carMoney" },
       { title: "Insurance", icon: "mdi:shield-check", to:"/Inssurance/inssurance" },
-      { title: "Inspection", icon: "mdi:clipboard-check" },
+      { title: "Inspection", icon: "mdi:clipboard-check", to:"Incpection/incpection" },
       { title: "Shipping", icon: "mdi:truck-delivery" },
     ],
   },

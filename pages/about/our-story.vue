@@ -12,7 +12,7 @@
     <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse-slow delay-500">
     </div>
     <div class="absolute inset-0 opacity-[0.03] bg-grid-pattern"></div>
-    <div class=" mx-auto px-4 md:px-6 relative z-10">
+    <div class="relative z-10">
       <div class="pb-12 relative">
         <div
           class="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
@@ -20,7 +20,7 @@
         <div
           class="absolute bottom-0 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3">
         </div>
-        <div class="mx-auto px-4 md:px-6 relative z-10">
+        <div class="relative z-10">
           <div class="text-center mb-16">
             <section class="relative bg-gradient-to-br from-slate-50 via-white to-slate-100">
               <div class="relative h-[500px] md:h-[600px] w-full">
@@ -28,7 +28,7 @@
                   class="w-full h-full object-cover" />
                 <div class="absolute inset-0 "></div>
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
-                  <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  <h2 class="text-4xl md:text-5xl font-bold text-gray-100 mb-4">
                     Our
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                       Story

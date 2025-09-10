@@ -74,7 +74,7 @@ const handleSubmit = () => {
             </div>
           </div>
           <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
               <!-- Address -->
               <div
@@ -146,7 +146,7 @@ const handleSubmit = () => {
                   <Icon name="mdi:account" class="w-8 h-8 text-primary" />
                 </span>
                 <input v-model="form.name" type="text" placeholder="Enter your name"
-                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-500"
                   required />
               </div>
             </div>
@@ -159,7 +159,7 @@ const handleSubmit = () => {
                   <Icon name="mdi:email" class="w-8 h-8 text-primary" />
                 </span>
                 <input v-model="form.email" type="email" placeholder="Enter your email"
-                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-500"
                   required />
               </div>
             </div>
@@ -172,7 +172,7 @@ const handleSubmit = () => {
                   <Icon name="mdi:phone" class="w-8 h-8 text-primary" />
                 </span>
                 <input v-model="form.phone" type="text" placeholder="Enter your phone"
-                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400" />
+                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-500" />
               </div>
             </div>
 
@@ -184,7 +184,7 @@ const handleSubmit = () => {
                   <Icon name="mdi:message-text" class="w-8 h-8 text-primary" />
                 </span>
                 <input v-model="form.subject" type="text" placeholder="Enter subject"
-                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400" />
+                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-500" />
               </div>
             </div>
 
@@ -196,7 +196,7 @@ const handleSubmit = () => {
                   <Icon name="mdi:note-text" class="w-8 h-8 text-primary" />
                 </span>
                 <textarea v-model="form.message" rows="4" placeholder="Write your message"
-                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-800"></textarea>
+                  class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-500"></textarea>
               </div>
             </div>
 

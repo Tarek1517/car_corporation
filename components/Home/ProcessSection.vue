@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter();
+const goToServices = () => {
+  router.push('/services')
+}
+const goToContacts = () => {
+  router.push('/contact-us/contact')
+}
+</script>
 
 <template>
   <section
@@ -51,12 +60,14 @@
           </p>
           <div class="flex gap-4 mt-8">
             <button
-              class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+            @click="goToServices"
+              class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
             >
               Explore Services
             </button>
             <button
-              class="px-6 py-3 border border-primary/55 text-gray-700 rounded-lg font-medium hover:border-primary/50 transition-colors duration-300"
+            @click="goToContacts"
+              class="px-6 py-3 border border-primary/55 text-gray-700 rounded-lg font-medium hover:border-primary/50 transition-colors duration-300 hover:bg-primary/5 cursor-pointer"
             >
               Contact Us
             </button>
@@ -246,3 +257,4 @@
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 </style>
+

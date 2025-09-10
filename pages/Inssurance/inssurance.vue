@@ -111,7 +111,7 @@ const handleFileUpload = (event) => {
     ></div>
     <div class="absolute inset-0 opacity-[0.03] bg-grid-pattern"></div>
 
-    <div class="relative z-10">
+<div class="relative z-10">
       <!-- Hero Section -->
 <div class="text-center ">
   <section class="relative bg-gradient-to-br from-slate-50 via-white to-slate-100">
@@ -168,7 +168,7 @@ const handleFileUpload = (event) => {
                     v-model="form.name"
                     type="text"
                     placeholder="Enter your name"
-                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-900"
                     required
                   />
                 </div>
@@ -185,7 +185,7 @@ const handleFileUpload = (event) => {
                     v-model="form.email"
                     type="email"
                     placeholder="Enter your email"
-                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-900"
                     required
                   />
                 </div>
@@ -202,7 +202,7 @@ const handleFileUpload = (event) => {
                     v-model="form.phone"
                     type="text"
                     placeholder="Enter your phone"
-                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-900"
                   />
                 </div>
               </div>
@@ -216,7 +216,7 @@ const handleFileUpload = (event) => {
                   </span>
                   <select
                     v-model="form.carModel"
-                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-900"
                   >
                     <option value="" disabled>Select your car model</option>
                     <option value="sedan">Sedan</option>
@@ -241,8 +241,8 @@ const handleFileUpload = (event) => {
                   <input
                     v-model="form.yearOfManufacture"
                     type="number"
-                    placeholder="e.g., 2020"
-                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                    placeholder="Enter year"
+                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-900"
                     min="1980"
                     max="2024"
                   />
@@ -258,7 +258,7 @@ const handleFileUpload = (event) => {
                   </span>
                   <select
                     v-model="form.carInsurance"
-                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-900"
                   >
                     <option value="" disabled>Select your car Insurance</option>
                     <option value="third-party">Third-Party</option>
@@ -278,7 +278,7 @@ const handleFileUpload = (event) => {
                     @change="handleFileUpload"
                     type="file"
                     accept="image/*"
-                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400"
+                    class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-900"
                   />
                 </div>
               </div>
