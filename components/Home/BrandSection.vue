@@ -12,7 +12,6 @@ const brands = [
 
 <template>
   <div class="w-full py-16 bg-gradient-to-b from-gray-50 via-white to-gray-100">
-    <!-- Section Header -->
     <div class="text-center mb-10">
       <div
         class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-sm font-semibold mb-4 shadow-lg"
@@ -35,7 +34,6 @@ const brands = [
       </p>
     </div>
 
-    <!-- Brand Carousel -->
     <div class="container mx-auto px-10">
       <UCarousel
         :items="brands"
@@ -50,18 +48,14 @@ const brands = [
           <div
             class="relative group bg-gradient-to-r from-primary/15 to-secondary/10 rounded-3xl flex flex-col items-center justify-center p-6 transition-all duration-500 hover:scale-105 cursor-pointer border border-gray-100"
           >
-            <!-- Brand Logo with Animated Gradient Border -->
             <div
               class="w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center overflow-hidden mb-4 relative group-hover:scale-110 transition-transform duration-500"
             >
-              <!-- Animated gradient border -->
               <div
                 class="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary p-1 animate-spin-slow"
               >
                 <div class="absolute inset-0.5 rounded-full bg-white"></div>
               </div>
-
-              <!-- Logo container -->
               <div
                 class="relative w-full h-full rounded-full bg-white flex items-center justify-center p-3 z-10"
               >
@@ -75,8 +69,6 @@ const brands = [
                 />
               </div>
             </div>
-
-            <!-- Hidden brand name that slides up on hover -->
             <div
               class="overflow-hidden h-0 group-hover:h-6 transition-all duration-500"
             >

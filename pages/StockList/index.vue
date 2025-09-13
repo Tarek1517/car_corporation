@@ -1,10 +1,11 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { Icon } from "@iconify/vue";
 
 const form = ref({
-  email: "",
+  search: "",
 });
+
 const cars = ref([
   {
     picture: '/images/brv_slider_new.png',
@@ -88,6 +89,30 @@ const cars = ref([
   }
 ]);
 
+const filteredCars = computed(() => {
+  if (!form.value.search.trim()) {
+    return cars.value;
+  }
+  
+  const searchTerm = form.value.search.toLowerCase().trim();
+  
+  return cars.value.filter(car => {
+    return (
+      car.makeModel.toLowerCase().includes(searchTerm) ||
+      car.stockId.toLowerCase().includes(searchTerm) ||
+      car.chassisCode.toLowerCase().includes(searchTerm) ||
+      car.year.includes(searchTerm) ||
+      car.color.toLowerCase().includes(searchTerm) ||
+      car.engineCC.includes(searchTerm) ||
+      car.fuel.toLowerCase().includes(searchTerm) ||
+      car.mileage.includes(searchTerm) ||
+      car.auctionPoint.toLowerCase().includes(searchTerm) ||
+      car.price.toLowerCase().includes(searchTerm) ||
+      car.status.toLowerCase().includes(searchTerm)
+    );
+  });
+});
+
 const getGradeClass = (grade) => {
   if (grade >= 4.5) return 'bg-green-100 text-green-800';
   if (grade >= 4) return 'bg-blue-100 text-blue-800';
@@ -101,10 +126,12 @@ const getStatusClass = (status) => {
   return 'bg-gray-100 text-gray-800';
 };
 
-const inquire = (stockId) => {
-  alert(`Inquiry submitted for Stock ID: ${stockId}. Our team will contact you soon.`);
+
+const handleSearch = (event) => {
+  event.preventDefault();
 };
 </script>
+
 <template>
     <section class="w-full relative overflow-hidden py-2 md:py-6 bg-gradient-to-br from-slate-50 via-white to-slate-100">
     <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow"></div>
@@ -113,9 +140,10 @@ const inquire = (stockId) => {
     <div class="absolute inset-0 opacity-[0.03] bg-grid-pattern"></div>
     <div class="container mx-auto px-4 relative">
         <div class="text-center">
-            <h2 class="text-center text-3xl text-gray-600 font-semibold">Stock List | 5 Cars</h2>
+            <h2 class="text-center text-3xl text-gray-600 font-semibold">Stock List | {{ filteredCars.length }} Cars</h2>
         </div>
         <form 
+  @submit="handleSearch"
   class="flex justify-center py-6 md:py-10"
 >
   <div class="relative w-full max-w-xl flex">
@@ -124,7 +152,7 @@ const inquire = (stockId) => {
       class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" 
     />
     <input 
-      v-model="form.email" 
+      v-model="form.search" 
       type="text" 
       placeholder="Search with keyword" 
       class="w-full pl-10 pr-2 py-2 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-700"
@@ -158,11 +186,10 @@ const inquire = (stockId) => {
             <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Auction Point</th>
             <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
             <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-          <tr v-for="(car, index) in cars" :key="index" class="hover:bg-gray-50">
+          <tr v-for="(car, index) in filteredCars" :key="index" class="hover:bg-gray-50">
             <td class="px-4 py-4 whitespace-nowrap">
               <img :src="car.picture" :alt="car.makeModel" class="h-16 w-24 object-cover rounded-md">
             </td>
@@ -191,15 +218,18 @@ const inquire = (stockId) => {
                 {{ car.status }}
               </span>
             </td>
-            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
+            <!-- <td class="px-4 py-4 whitespace-nowrap text-sm font-medium">
               <button @click="inquire(car.stockId)" 
                       class="px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 Inquiry
               </button>
-            </td>
+            </td> -->
           </tr>
         </tbody>
       </table>
+      <div v-if="filteredCars.length === 0" class="text-center py-8 text-gray-500">
+        No cars found matching your search criteria.
+      </div>
     </div>
   </div>
     </div>

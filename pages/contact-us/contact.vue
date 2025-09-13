@@ -17,7 +17,6 @@ const handleSubmit = () => {
 
 <template>
   <section class="w-full relative overflow-hidden py-2 md:py-6 bg-gradient-to-br from-slate-50 via-white to-slate-100">
-    <!-- Background elements -->
     <div
       class="absolute top-0 right-0 w-96 h-96 bg-primary/10 -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow">
     </div>
@@ -30,14 +29,12 @@ const handleSubmit = () => {
 
     <div class="relative z-10">
       <div class="pb-12 relative">
-        <!-- Subtle background elements -->
         <div class="absolute top-0 left-0 w-64 h-64 bg-primary/5 blur-3xl -translate-x-1/2 -translate-y-1/2">
         </div>
         <div class="absolute bottom-0 right-0 w-80 h-80 bg-secondary/5 blur-3xl translate-x-1/3 translate-y-1/3">
         </div>
 
         <div class="relative z-10">
-          <!-- Hero section -->
           <div class="text-center mb-16">
             <section class="relative bg-gradient-to-br from-slate-50 via-white to-slate-100">
               <div class="relative h-[400px] md:h-[500px] w-full overflow-hidden">
@@ -61,7 +58,6 @@ const handleSubmit = () => {
           </div>
         </div>
 
-        <!-- Contact information cards -->
         <section class="py-6 bg-white">
           <div class="text-center items-center justify-center py-12">
             <p class="text-md text-gray-400">We’d Love to Hear From You</p>
@@ -75,48 +71,38 @@ const handleSubmit = () => {
           </div>
           <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-
-              <!-- Address -->
               <div
                 class="bg-white p-6 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 group">
                 <div class="p-3 bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors duration-300">
                   <Icon name="mdi:map-marker" class="w-8 h-8 text-primary" />
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-gray-800">ADDRESS</h4>
-                <p class="text-sm text-gray-600">220E Front St. Burlington, NC 27215</p>
+                <p class="text-sm text-gray-600">House 139 Rd Number 22, Dhaka 1212</p>
               </div>
-
-              <!-- Phone -->
               <div
                 class="bg-white p-6 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 group">
                 <div class="p-3 bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors duration-300">
                   <Icon name="mdi:phone" class="w-8 h-8 text-primary" />
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-gray-800">PHONE</h4>
-                <p class="text-sm text-gray-600">+1 (007) 123-4567</p>
-                <p class="text-sm text-gray-600 mt-1">+1 (007) 987-6543</p>
+                <p class="text-sm text-gray-600">+8801727-412340</p>
               </div>
-
-              <!-- Email -->
               <div
                 class="bg-white p-6 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 group">
                 <div class="p-3 bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors duration-300">
                   <Icon name="mdi:email-outline" class="w-8 h-8 text-primary" />
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-gray-800">EMAIL</h4>
-                <p class="text-sm text-gray-600">info@carcorporations.com</p>
-                <p class="text-sm text-gray-600 mt-1">support@carcorporations.com</p>
+                <p class="text-sm text-gray-600">carcorpbd@gmail.com</p>
               </div>
 
-              <!-- Business Hours -->
               <div
                 class="bg-white p-6 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 group">
                 <div class="p-3 bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors duration-300">
                   <Icon name="mdi:clock-outline" class="w-8 h-8 text-primary" />
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-gray-800">BUSINESS HOURS</h4>
-                <p class="text-sm text-gray-600">Mon-Fri: 9AM - 6PM</p>
-                <p class="text-sm text-gray-600 mt-1">Sat: 10AM - 4PM</p>
+                <p class="text-sm text-gray-600">Mon-Sat: 9AM - 11PM</p>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ const blogs = [
     image: "/images/blog1.jpg",
     author: "John Doe",
     authorImage: "/images/avater1.png",
-    link: "/blogs/how-to-import-car",
+    link: "/blogs/blogPost",
     publishDate: "2023-11-15"
   },
   {
@@ -20,8 +20,8 @@ const blogs = [
       "We break down the most reliable brands this year, helping you choose wisely.",
     image: "/images/blog2.jpg",
     author: "Sarah Ali",
-    authorImage: "/images/avater1.png",
-    link: "/blogs/reliable-car-brands",
+    authorImage: "/images/avater2.png",
+    link: "/blogs/blogPost",
     publishDate: "2023-11-10"
   },
   {
@@ -32,8 +32,8 @@ const blogs = [
       "Discover why car auctions are becoming increasingly popular worldwide.",
     image: "/images/counter.jpg",
     author: "Mike Lee",
-    authorImage: "/images/avater1.png",
-    link: "/blogs/car-auctions-future",
+    authorImage: "/images/avater3.png",
+    link: "/blogs/blogPost",
     publishDate: "2023-11-05"
   },
 ];
@@ -41,7 +41,6 @@ const blogs = [
 
 <template>
   <div class="w-full py-20 bg-gradient-to-br from-gray-50 to-white">
-    <!-- Section Header -->
     <div class="text-center mb-14">
       <div
         class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-sm font-semibold mb-4 shadow-lg"

@@ -27,12 +27,9 @@ const menus = [
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
     <div class="container mx-auto px-3">
       <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
         <NuxtLink to="/" class="flex items-center group relative">
           <img src="/images/logo.jpg" alt="CarCorporation BD" class="h-auto w-12 rounded-full" />
         </NuxtLink>
-
-        <!-- Desktop Menu -->
         <nav class="hidden lg:flex items-center space-x-1">
           <div class="relative">
             <NuxtLink to="/"
@@ -92,10 +89,7 @@ const menus = [
             </NuxtLink>
           </div>
         </nav>
-
-        <!-- Search + CTA -->
         <div class="flex items-center space-x-4">
-          <!-- Search Bar -->
           <div class="relative hidden md:block">
             <div class="relative group">
               <input v-model="searchQuery" type="text" placeholder="Find cars, parts & more..."
