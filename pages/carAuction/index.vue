@@ -101,7 +101,7 @@ const showMore = () => {
     <div class="relative z-10">
       <section class="relative">
         <div class="relative h-[500px] md:h-[600px] w-full overflow-hidden">
-          <img src="../../public/images/auction2.jpg" alt="Our Story Background"
+          <img src="../../public/images/auction2.jpg" alt=""
                class="w-full h-full object-cover brightness-75" />
           <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
           
@@ -322,6 +322,14 @@ const showMore = () => {
           </div>
         </div>
       </section>
+              <div class="relative z-10 text-center max-w-2xl mx-auto mt-12 mb-8">
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Services <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">We Provides</span>
+            </h3>
+            <p class="text-gray-600">
+                Explore our comprehensive services designed to enhance your car buying and selling experience.
+            </p>
+        </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-6 relative z-10">
 
   <!-- Card 1: Live Auctions -->
@@ -374,7 +382,7 @@ const showMore = () => {
         class="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center transition-colors duration-300 group-hover:bg-secondary/10">
         <Icon name="mdi:arrow-right" class="text-secondary transition-all duration-500 transform group-hover:translate-x-1" />
       </div>
-      <span class="text-secondary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-100 opacity-0">Track Delivery</span>
+      <span class="text-secondary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-100 opacity-0">Views Delivery</span>
     </div>
   </div>
 

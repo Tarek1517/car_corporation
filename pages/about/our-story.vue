@@ -1,4 +1,6 @@
 <script setup>
+import { Icon } from "@iconify/vue";
+
 </script>
 
 <template>
@@ -55,7 +57,7 @@
                       <div class="flex justify-start mb-5 relative z-10">
                         <div
                           class="p-3 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl transition-colors duration-500 group-hover:from-primary/15 group-hover:to-primary/10 shadow-sm">
-                          <Icon name="mdi:gavel" class="w-7 h-7 text-primary" />
+                          <Icon icon="mdi:gavel" class="w-7 h-7 text-primary" />
                         </div>
                       </div>
                       <h3 class="font-semibold text-xl text-gray-900 mb-2 relative z-10">Live Auction Access</h3>
@@ -73,7 +75,7 @@
                       <div class="flex justify-start mb-5 relative z-10">
                         <div
                           class="p-3 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-xl transition-colors duration-500 group-hover:from-secondary/15 group-hover:to-secondary/10 shadow-sm">
-                          <Icon name="mdi:truck-delivery" class="w-7 h-7 text-secondary" />
+                          <Icon icon="mdi:truck-delivery" class="w-7 h-7 text-secondary" />
                         </div>
                       </div>
                       <h3 class="font-semibold text-xl text-gray-900 mb-2 relative z-10">Vehicle Import</h3>
@@ -91,7 +93,7 @@
                       <div class="flex justify-start mb-5 relative z-10">
                         <div
                           class="p-3 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl transition-colors duration-500 group-hover:from-primary/15 group-hover:to-primary/10 shadow-sm">
-                          <Icon name="mdi:car-wrench" class="w-7 h-7 text-primary" />
+                          <Icon icon="mdi:car-wrench" class="w-7 h-7 text-primary" />
                         </div>
                       </div>
                       <h3 class="font-semibold text-xl text-gray-900 mb-2 relative z-10">Quality Vehicles</h3>
@@ -109,7 +111,7 @@
                       <div class="flex justify-start mb-5 relative z-10">
                         <div
                           class="p-3 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-xl transition-colors duration-500 group-hover:from-secondary/15 group-hover:to-secondary/10 shadow-sm">
-                          <Icon name="mdi:storefront" class="w-7 h-7 text-secondary" />
+                          <Icon icon="mdi:storefront" class="w-7 h-7 text-secondary" />
                         </div>
                       </div>
                       <h3 class="font-semibold text-xl text-gray-900 mb-2 relative z-10">Dealer Services</h3>
@@ -121,7 +123,6 @@
                 </div>
               </div>
             </section>
-
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="relative">
@@ -152,7 +153,7 @@
               <div class="space-y-4 mb-8">
                 <div class="flex items-start">
                   <div class="bg-primary/10 p-2 rounded-lg mr-4 flex-shrink-0">
-                    <Icon name="mdi:target" class="w-6 h-6 text-primary" />
+                    <Icon icon="mdi:target" class="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">Our Mission</h4>
@@ -165,7 +166,7 @@
 
                 <div class="flex items-start">
                   <div class="bg-secondary/10 p-2 rounded-lg mr-4 flex-shrink-0">
-                    <Icon name="mdi:eye-outline" class="w-6 h-6 text-secondary" />
+                    <Icon icon="mdi:eye-outline" class="w-6 h-6 text-secondary" />
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">Our Vision</h4>
@@ -190,7 +191,7 @@
               <button
                 class="mt-8 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center">
                 <span>Read Full Story</span>
-                <Icon name="mdi:arrow-right" class="ml-2 w-5 h-5" />
+                <Icon icon="mdi:arrow-right" class="ml-2 w-5 h-5" />
               </button>
             </div>
           </div>
@@ -231,7 +232,7 @@
               <div class="flex flex-wrap gap-6 mb-8">
                 <div class="flex items-center">
                   <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                    <Icon name="mdi:check-circle" class="w-6 h-6 text-primary" />
+                    <Icon icon="mdi:check-circle" class="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <div class="text-2xl font-bold text-gray-900">2K+</div>
@@ -240,7 +241,7 @@
                 </div>
                 <div class="flex items-center">
                   <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                    <Icon name="mdi:check-circle" class="w-6 h-6 text-primary" />
+                    <Icon icon="mdi:check-circle" class="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <div class="text-2xl font-bold text-gray-900">40+</div>
@@ -253,7 +254,7 @@
                 <button
                   class="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center">
                   <span>Explore Auctions</span>
-                  <Icon name="mdi:arrow-right" class="ml-2 w-5 h-5" />
+                  <Icon icon="mdi:arrow-right" class="ml-2 w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -268,7 +269,7 @@
                 class="absolute -top-4 -left-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100 animate-float">
                 <div class="flex items-center">
                   <div class="bg-primary/10 p-2 rounded-lg mr-3">
-                    <Icon name="mdi:gavel" class="w-5 h-5 text-primary" />
+                    <Icon icon="mdi:gavel" class="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <div class="font-semibold text-gray-900">Live Auctions</div>
@@ -282,7 +283,7 @@
                 class="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100 animate-float delay-1000">
                 <div class="flex items-center">
                   <div class="bg-secondary/10 p-2 rounded-lg mr-3">
-                    <Icon name="mdi:truck-delivery" class="w-5 h-5 text-secondary" />
+                    <Icon icon="mdi:truck-delivery" class="w-5 h-5 text-secondary" />
                   </div>
                   <div>
                     <div class="font-semibold text-gray-900">Door Delivery</div>
@@ -301,7 +302,6 @@
       </section>
       <!-- Services -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        <!-- Card 1: Live Auction Access -->
         <div
           class="group text-start bg-white rounded-2xl p-6 transition-all duration-500 hover:shadow-xl shadow-md border border-gray-100 hover:border-primary/20 hover:-translate-y-2 relative overflow-hidden">
           <div
@@ -310,7 +310,7 @@
           <div class="flex justify-start mb-5 relative z-10">
             <div
               class="p-3 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl transition-colors duration-500 group-hover:from-primary/15 group-hover:to-primary/10 shadow-sm">
-              <Icon name="mdi:gavel" class="w-7 h-7 text-primary" />
+              <Icon icon="mdi:gavel" class="w-7 h-7 text-primary" />
             </div>
           </div>
           <h3 class="font-semibold text-xl text-gray-900 mb-3 relative z-10">
@@ -322,7 +322,7 @@
           <div class="flex items-center relative z-10">
             <div
               class="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/10">
-              <Icon name="mdi:arrow-right"
+              <Icon icon="mdi:arrow-right"
                 class="text-primary transition-all duration-500 transform group-hover:translate-x-1" />
             </div>
             <span
@@ -340,7 +340,7 @@
           <div class="flex justify-start mb-5 relative z-10">
             <div
               class="p-3 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-xl transition-colors duration-500 group-hover:from-secondary/15 group-hover:to-secondary/10 shadow-sm">
-              <Icon name="mdi:truck-delivery" class="w-7 h-7 text-secondary" />
+              <Icon icon="mdi:truck-delivery" class="w-7 h-7 text-secondary" />
             </div>
           </div>
           <h3 class="font-semibold text-xl text-gray-900 mb-3 relative z-10">
@@ -352,7 +352,7 @@
           <div class="flex items-center relative z-10">
             <div
               class="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center transition-colors duration-300 group-hover:bg-secondary/10">
-              <Icon name="mdi:arrow-right"
+              <Icon icon="mdi:arrow-right"
                 class="text-secondary transition-all duration-500 transform group-hover:translate-x-1" />
             </div>
             <span
@@ -370,7 +370,7 @@
           <div class="flex justify-start mb-5 relative z-10">
             <div
               class="p-3 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl transition-colors duration-500 group-hover:from-primary/15 group-hover:to-primary/10 shadow-sm">
-              <Icon name="mdi:car-wrench" class="w-7 h-7 text-primary" />
+              <Icon icon="mdi:car-wrench" class="w-7 h-7 text-primary" />
             </div>
           </div>
           <h3 class="font-semibold text-xl text-gray-900 mb-3 relative z-10">
@@ -382,7 +382,7 @@
           <div class="flex items-center relative z-10">
             <div
               class="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/10">
-              <Icon name="mdi:arrow-right"
+              <Icon icon="mdi:arrow-right"
                 class="text-primary transition-all duration-500 transform group-hover:translate-x-1" />
             </div>
             <span
@@ -400,7 +400,7 @@
           <div class="flex justify-start mb-5 relative z-10">
             <div
               class="p-3 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-xl transition-colors duration-500 group-hover:from-secondary/15 group-hover:to-secondary/10 shadow-sm">
-              <Icon name="mdi:storefront" class="w-7 h-7 text-secondary" />
+              <Icon icon="mdi:storefront" class="w-7 h-7 text-secondary" />
             </div>
           </div>
           <h3 class="font-semibold text-xl text-gray-900 mb-3 relative z-10">
@@ -412,7 +412,7 @@
           <div class="flex items-center relative z-10">
             <div
               class="w-8 h-8 rounded-full bg-secondary/5 flex items-center justify-center transition-colors duration-300 group-hover:bg-secondary/10">
-              <Icon name="mdi:arrow-right"
+              <Icon icon="mdi:arrow-right"
                 class="text-secondary transition-all duration-500 transform group-hover:translate-x-1" />
             </div>
             <span
@@ -421,31 +421,30 @@
           </div>
         </div>
       </div>
+    </div>
+    <div>
+      <HomeBrandSection/>
+    </div>
       <div class="mt-4 py-8">
-
       </div>
       <div class="mt-16 pt-12 border-t border-gray-200">
         <p class="text-center text-gray-500 text-sm mb-6">Trusted by automotive enthusiasts and businesses nationwide
         </p>
         <div class="flex flex-wrap justify-center gap-8 md:gap-12 opacity-60">
           <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
-            <Icon name="mdi:shield-check" class="w-full h-full text-primary" />
+            <Icon icon="mdi:shield-check" class="w-full h-full text-primary" />
           </div>
           <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
-            <Icon name="mdi:medal" class="w-full h-full text-primary" />
+            <Icon icon="mdi:medal" class="w-full h-full text-primary" />
           </div>
           <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
-            <Icon name="mdi:account-group" class="w-full h-full text-primary" />
+            <Icon icon="mdi:account-group" class="w-full h-full text-primary" />
           </div>
           <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
-            <Icon name="mdi:calendar-star" class="w-full h-full text-primary" />
+            <Icon icon="mdi:calendar-star" class="w-full h-full text-primary" />
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <HomeBrandSection/>
-    </div>
   </section>
 </template>
 

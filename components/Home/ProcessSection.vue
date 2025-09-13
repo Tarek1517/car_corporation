@@ -10,6 +10,15 @@ const goToContacts = () => {
 const goToCarAuction = () => {
   router.push('/carAuction')
 }
+const goToVehicleImport = () => {
+  router.push('/vehicleImport')
+}
+const goToReconditionedVehicles = () => {
+  router.push('/reconditionedVehicles')
+}
+const goToServicesPage = () => {
+  router.push('/carDealerService')
+}
 </script>
 
 <template>
@@ -117,7 +126,6 @@ const goToCarAuction = () => {
           </div>
         </div>
 
-        <!-- Card 2: Vehicle Import -->
         <div
           class="group text-start bg-white rounded-2xl p-8 transition-all duration-500 shadow-sm hover:shadow-2xl border border-gray-100 hover:border-secondary/30 hover:-translate-y-3 relative overflow-hidden"
         >
@@ -150,14 +158,13 @@ const goToCarAuction = () => {
                 class="text-primary transition-all duration-500 transform group-hover:text-secondary group-hover:translate-x-1"
               />
             </div>
-            <span
-              class="text-secondary text-sm font-medium transition-all duration-300 ml-3 opacity-0 group-hover:opacity-100"
+            <span @click="goToVehicleImport"
+              class="text-secondary text-sm font-medium transition-all duration-300 ml-3 opacity-0 group-hover:opacity-100 cursor-pointer"
               >Learn more</span
             >
           </div>
         </div>
 
-        <!-- Card 3: Reconditioned Vehicles -->
         <div
           class="group text-start bg-white rounded-2xl p-8 transition-all duration-500 hover:shadow-sm shadow-2xl border hover:border-gray-100 border-primary/30 hover:translate-y-1 -translate-y-3 relative overflow-hidden"
         >
@@ -190,8 +197,8 @@ const goToCarAuction = () => {
                 class="text-secondary transition-all duration-500 transform group-hover:text-primary group-hover:translate-x-1"
               />
             </div>
-            <span
-              class="text-primary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-0 opacity-100 hover:opacity-100"
+            <span @click="goToReconditionedVehicles"
+              class="text-primary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-0 opacity-100 hover:opacity-100 cursor-pointer"
               >Learn more</span
             >
           </div>
@@ -230,8 +237,8 @@ const goToCarAuction = () => {
                 class="text-primary transition-all duration-500 transform group-hover:text-secondary group-hover:translate-x-1"
               />
             </div>
-            <span
-              class="text-secondary text-sm font-medium transition-all duration-300 ml-3 opacity-0 group-hover:opacity-100"
+            <span @click="goToServicesPage"
+              class="text-secondary text-sm font-medium transition-all duration-300 ml-3 opacity-0 group-hover:opacity-100 cursor-pointer"
               >Learn more</span
             >
           </div>

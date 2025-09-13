@@ -53,7 +53,6 @@ const showrooms = [
     <div class="relative h-[500px] md:h-[600px] w-full">
       <img src="/images/showrooms.jpg" alt="Showrooms Background"
         class="w-full h-full object-cover" />
-      <!-- Dark overlay -->
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
         <h2 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
@@ -71,45 +70,38 @@ const showrooms = [
     <div class="contain">
         <HomeProductsSection/>
     </div>
-    <!-- Showroom Section -->
     <div class="relative py-16 bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
           Our Showrooms Across Bangladesh
         </h2>
 
-        <!-- Grid -->
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div
             v-for="(item, idx) in showrooms"
             :key="idx"
             class="group bg-white shadow-md rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
           >
-            <!-- City -->
             <h3 class="text-lg font-semibold text-primary mb-3 uppercase tracking-wide flex items-center gap-2">
               <Icon name="mdi:map-marker" class="w-5 h-5 text-primary" />
               {{ item.city }}
             </h3>
 
-            <!-- Name -->
             <p class="text-gray-800 font-medium mb-2 flex items-center gap-2">
               <Icon name="mdi:office-building-marker-outline" class="w-4 h-4 text-gray-500" />
               {{ item.name }}
             </p>
 
-            <!-- Address -->
             <p class="text-gray-600 text-sm leading-relaxed mb-3 flex items-start gap-2">
               <Icon name="mdi:road-variant" class="w-4 h-4 text-gray-500 mt-0.5" />
               {{ item.address }}
             </p>
 
-            <!-- Tel -->
             <div v-if="item.tel" class="text-sm text-gray-700 mb-2 flex items-center gap-2">
               <Icon name="mdi:phone" class="w-4 h-4 text-gray-500" />
               <span>{{ item.tel }}</span>
             </div>
 
-            <!-- Mob -->
             <div class="text-sm text-gray-700 space-y-1">
               <span class="font-medium block">Mobile:</span>
               <div v-for="(num, i) in item.mob" :key="i" class="flex items-center gap-2">

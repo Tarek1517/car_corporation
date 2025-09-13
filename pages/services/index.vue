@@ -216,10 +216,8 @@ const features = [
             </h2>
           </div>
 
-          <!-- Application Form -->
           <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <form @submit.prevent="handleSubmit" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Name -->
               <div class="col-span-1">
                 <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
                 <div class="relative">
@@ -233,7 +231,6 @@ const features = [
                 </div>
               </div>
 
-              <!-- Email -->
               <div class="col-span-1">
                 <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <div class="relative">
@@ -247,7 +244,6 @@ const features = [
                 </div>
               </div>
 
-              <!-- Phone -->
               <div class="col-span-1 md:col-span-2">
                 <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
                 <div class="relative">
@@ -259,8 +255,6 @@ const features = [
                   />
                 </div>
               </div>
-
-              <!-- Car Model -->
               <div class="col-span-1 md:col-span-2">
                 <label class="block text-sm font-medium text-gray-700 mb-1">Car Model</label>
                 <div class="relative">
