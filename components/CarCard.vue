@@ -8,7 +8,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <NuxtLink :to="`/cars/${car.id}`" class="block group">
+  <!-- <NuxtLink :to="`/cars/${car.id}`" class="block group"> -->
+    <NuxtLink to="/cars" class="block group">
     <div
       class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100 h-full flex flex-col hover:-translate-y-1"
     >
