@@ -110,7 +110,6 @@ const showrooms = [
               </div>
             </div>
 
-            <!-- Map Button -->
             <div v-if="item.map" class="mt-5">
               <a
                 :href="item.map"

@@ -103,7 +103,7 @@ const menus = [
               </button>
             </div>
           </div>
-          <NuxtLink to="#"
+          <NuxtLink to="/Auth/login"
             class="hidden xl:flex items-center px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] group">
             <Icon name="material-symbols:account-circle"
               class="mr-2 text-lg group-hover:scale-110 transition-transform" />
