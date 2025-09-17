@@ -1,5 +1,27 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+const whyChooseUs = [
+  {
+    icon: 'mdi:shield-check-outline',
+    title: 'Trusted & Transparent',
+    description: 'We pride ourselves on transparency. All vehicles come with verified auction sheets and detailed inspection reports.'
+  },
+  {
+    icon: 'mdi:account-group-outline',
+    title: 'Expert Guidance',
+    description: 'Our experienced team provides professional guidance throughout the auction and import process, ensuring a smooth experience.'
+  },
+  {
+    icon: 'mdi:currency-usd',
+    title: 'Competitive Pricing',
+    description: 'By providing direct access to auctions, we cut out the middleman, offering you the best possible prices for your dream car.'
+  },
+  {
+    icon: 'mdi:headset',
+    title: 'End-to-End Support',
+    description: 'From bidding to delivery, we offer comprehensive support, including logistics, customs clearance, and after-sales service.'
+  }
+];
 
 </script>
 
@@ -31,9 +53,9 @@ import { Icon } from "@iconify/vue";
                 <div class="absolute inset-0 "></div>
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
                   <h2 class="text-4xl md:text-5xl font-bold text-gray-100 mb-4">
-                    Our
+                    Why Car 
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                      Story
+                      Corporations BD
                     </span>
                   </h2>
                   <p class="text-xl text-gray-100 max-w-2xl">
@@ -122,6 +144,23 @@ import { Icon } from "@iconify/vue";
                   </div>
                 </div>
               </div>
+            </section>
+            <section class="py-16">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Choose Car Corporations BD</h2>
+                        <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Your trusted partner for importing high-quality vehicles directly from Japan.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div v-for="(item, index) in whyChooseUs" :key="index" class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-6">
+                                <Icon :icon="item.icon" class="h-8 w-8 text-primary" />
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ item.title }}</h3>
+                            <p class="text-gray-600">{{ item.description }}</p>
+                        </div>
+                    </div>
+                </div>
             </section>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

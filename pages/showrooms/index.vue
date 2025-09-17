@@ -1,48 +1,56 @@
 <script setup>
-const showrooms = [
+import { Icon } from "@iconify/vue";
+
+const headOffice = {
+  city: "Dhaka",
+  name: "Car Corporation HQ",
+  address: "102, Shahid Tajuddin Ahmed Sarani, Tejgaon Industrial Area, Dhaka-1208",
+  tel: "+880-2-8170902",
+  email: "info@carcorporationbd.com",
+  workingHours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
+  mob: ["+880-1704848771", "+880-1704848772"],
+  map: "https://maps.google.com/?q=Tejgaon+Dhaka",
+  departments: [
+    { name: "Sales Department", email: "sales@carcorporationbd.com", phone: "+880-1704848771" },
+    { name: "Customer Support", email: "support@carcorporationbd.com", phone: "+880-1704848772" },
+    { name: "Import & Logistics", email: "import@carcorporationbd.com", phone: "+880-1704848773" },
+  ]
+};
+
+const keyPersonnel = [
+  { name: "Mr. Rakibul Islam", title: "Chief Executive Officer", image: "/images/avater1.png" },
+  { name: "Ms. Farhana Akter", title: "Head of Sales", image: "/images/avater2.png" },
+  { name: "Mr. Tanvir Ahmed", title: "Operations Manager", image: "/images/avater3.png" },
+];
+
+const branchOffices = [
   {
-    city: "Dhaka",
-    name: "Car Corporation HQ",
-    address: "102, Shahid Tajuddin Ahmed Sarani, Tejgaon, Dhaka",
-    tel: "+880-2-8170902",
-    mob: ["+880-1704848771", "+880-1704848772"],
-    map: "https://maps.google.com/?q=Tejgaon+Dhaka",
-  },
-  {
-    city: "Rangpur",
+    city: "Chattogram",
     name: "Car Corporation Showroom",
-    address: "GL Roy Road, Kamalkachna (Opposite Fire Station), Rangpur",
-    mob: ["+880-1704844778"],
+    address: "F/2, Sk. Mujib Road, Agrabad, Chattogram",
+    mob: ["+880-1322846204"],
+    map: "https://maps.google.com/?q=Agrabad+Chattogram",
   },
   {
     city: "Sylhet",
     name: "Car Corporation Showroom",
     address: "31/3, North Kazitula, Electric Supply Road, Sylhet",
     mob: ["+880-1704848765"],
-  },
-  {
-    city: "Chattogram",
-    name: "Car Corporation Showroom",
-    address: "F/2, Sk. Mujib Road, Agrabad, Chattogram",
-    mob: ["+880-1322846204"],
+    map: "https://maps.google.com/?q=Kazitula+Sylhet",
   },
   {
     city: "Rajshahi",
     name: "Car Corporation Showroom",
     address: "248, Airport Road, Sopura, Boalia, Rajshahi",
     mob: ["+880-1729200822"],
-  },
-  {
-    city: "Jashore",
-    name: "Car Corporation Showroom",
-    address: "Murali Mor, Khulna Road, Jashore",
-    mob: ["+880-1704844775"],
+    map: "https://maps.google.com/?q=Sopura+Rajshahi",
   },
   {
     city: "Khulna",
     name: "Car Corporation Showroom",
     address: "20-22, Majid Sarani, Sonadanga, Khulna",
     mob: ["+880-1729200822"],
+    map: "https://maps.google.com/?q=Sonadanga+Khulna",
   },
 ];
 </script>

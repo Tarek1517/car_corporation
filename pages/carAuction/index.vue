@@ -273,7 +273,6 @@ const showMore = () => {
                 </div>
               </div>
               
-              <!-- Hover action bar -->
               <div class="px-6 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div class="flex justify-between border-t border-gray-100 pt-4">
                   <button class="flex items-center text-sm text-gray-600 hover:text-primary">
