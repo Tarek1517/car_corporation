@@ -77,7 +77,7 @@ const handleSubmit = () => {
                   <Icon name="mdi:map-marker" class="w-8 h-8 text-primary" />
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-gray-800">ADDRESS</h4>
-                <p class="text-sm text-gray-600">House 139 Rd Number 22, Dhaka 1212</p>
+                <p class="text-sm text-gray-600">Rupayan Prestige, House 81 & 83, Road 4, Block B, Niketan, Gulshan, Dhaka. (Adjacent to Niketan Central Masjid), Dhaka, Bangladesh, 1212</p>
               </div>
               <div
                 class="bg-white p-6 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 group">
@@ -111,7 +111,6 @@ const handleSubmit = () => {
     </div>
     <section class="py-16 bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <div class="max-w-5xl mx-auto px-6">
-        <!-- Title -->
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
             Contact <span class="text-primary">Car Corporation</span>
@@ -121,10 +120,8 @@ const handleSubmit = () => {
           </p>
         </div>
 
-        <!-- Contact Form -->
         <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
           <form @submit.prevent="handleSubmit" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Name -->
             <div class="col-span-1">
               <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
               <div class="relative">

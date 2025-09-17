@@ -9,11 +9,10 @@ const headOffice = {
   email: "info@carcorporationbd.com",
   workingHours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
   mob: ["+880-1704848771", "+880-1704848772"],
-  map: "https://maps.google.com/?q=Tejgaon+Dhaka",
   departments: [
-    { name: "Sales Department", email: "sales@carcorporationbd.com", phone: "+880-1704848771" },
-    { name: "Customer Support", email: "support@carcorporationbd.com", phone: "+880-1704848772" },
-    { name: "Import & Logistics", email: "import@carcorporationbd.com", phone: "+880-1704848773" },
+    { name: "Sales Department", email: "carcorpbd@gmail.com", phone: "+880-1704848771" },
+    { name: "Customer Support", email: "carcorpbd@gmail.com", phone: "+880-1704848772" },
+    { name: "Import & Logistics", email: "carcorpbd@gmail.com", phone: "+880-1704848773" },
   ]
 };
 
@@ -71,12 +70,9 @@ const branchOffices = [
         </p>
       </div>
     </section>
-
-    <!-- Head Office Details Section -->
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- Left Column: Details -->
           <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200/80">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Corporate Headquarters</h2>
             <div class="space-y-4 text-gray-700">
@@ -101,29 +97,26 @@ const branchOffices = [
               <h3 class="text-xl font-semibold text-gray-800 mb-4">Department Contacts</h3>
               <div class="space-y-3">
                 <div v-for="dept in headOffice.departments" :key="dept.name" class="flex items-center justify-between text-sm">
-                  <span class="font-medium">{{ dept.name }}:</span>
+                  <span class="font-medium text-gray-500">{{ dept.name }}:</span>
                   <a :href="'mailto:' + dept.email" class="text-gray-600 hover:text-primary">{{ dept.email }}</a>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Right Column: Map -->
-          <div class="rounded-2xl overflow-hidden shadow-2xl h-96">
-            <iframe
-              :src="headOffice.map"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+<div class="rounded-2xl overflow-hidden shadow-2xl h-96">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29207.81503222402!2d90.39532659893251!3d23.783837654739983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7df0c9880c9%3A0xfdd910ba6f9d8a60!2sCar%20Corporations%20BD!5e0!3m2!1sen!2sbd!4v1758102328671!5m2!1sen!2sbd" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
         </div>
       </div>
     </section>
 
-    <!-- Key Personnel Section -->
     <section class="bg-white py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Meet Our Leaders</h2>
@@ -137,7 +130,6 @@ const branchOffices = [
       </div>
     </section>
 
-    <!-- Branch Offices Section -->
     <section class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Our Branch Offices</h2>

@@ -103,7 +103,7 @@ const showMore = () => {
                 </div>
                 <div class="absolute inset-0 bg-black/50"></div>
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
+                    <h2 class="text-5xl md:text-6xl font-bold text-white drop-shadow-lg mb-4">
                         Car
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow">

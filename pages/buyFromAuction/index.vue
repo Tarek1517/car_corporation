@@ -161,7 +161,7 @@ onMounted(() => {
 
 <template>
   <section
-    class="w-full relative overflow-hidden py-2 md:py-6 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    class="w-full relative overflow-hidden">
     <div
       class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow">
     </div>
@@ -177,7 +177,7 @@ onMounted(() => {
         <div class="relative h-[600px] md:h-[500px] w-full overflow-hidden">
           <img src="../../public/images/car-auction.jpg" alt=""
             class="w-full h-full object-cover scale-105 transform transition-transform duration-10000 hover:scale-110" />
-          <div class="absolute inset-0 flex flex-col items-end justify-center px-8 md:px-16 text-right z-10 ">
+          <div class="absolute inset-0 flex flex-col items-end justify-center text-right z-10 max-w-7xl mx-auto">
             <div
               class="mb-4 px-3 py-1 bg-red-500/20 backdrop-blur-sm rounded-full border border-red-400/30 text-gray-100 text-sm font-medium animate-fade-in-down">
               PREMIUM AUCTIONS SINCE 2010
@@ -243,6 +243,11 @@ onMounted(() => {
 
           <div v-if="activeTab === 'services'">
             <div class="mx-auto px-4 md:px-6 max-w-7xl relative z-10">
+              <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Auction Service
+                </h1>
+              </div>
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="text-left">
                   <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mb-6">
@@ -297,10 +302,6 @@ onMounted(() => {
                 <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                   How to Buy from Auction
                 </h1>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Follow these simple steps to purchase your desired vehicle from Japanese car auctions through our
-                  platform.
-                </p>
               </div>
               <div class="mx-auto relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -472,9 +473,8 @@ onMounted(() => {
             <section
               class="w-full relative overflow-hidden py-2 md:py-6 bg-gradient-to-br from-slate-50 via-white to-slate-100">
               <div class="container mx-auto px-4 relative">
-
+                  <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">Upcoming Auction Events</h2>
                 <div class="px-1 py-8">
-                  <h2 class="text-2xl font-bold text-center mb-8 text-gray-600">Upcoming Auction Events</h2>
 
                   <div class="overflow-x-auto bg-white rounded-xl shadow-lg max-w-7xl">
                     <table class="min-w-full divide-y divide-gray-200">
@@ -528,8 +528,13 @@ onMounted(() => {
           </div>
 
           <div v-else-if="activeTab === 'terms'">
-            <div class="relative z-10">
+            <div class="relative z-10 max-w-7xl mx-auto">
               <div class="px-1 py-4">
+                              <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                  Auction Terms
+                </h1>
+              </div>
                 <h2 class="text-2xl font-bold text-start mb-8 text-gray-600">Auction Membership Registration</h2>
                 <p class="text-md text-gray-600 mb-8 max-w-xl">
                   We provide Free Access to clients registered on our website for browsing vehicles available in Japan
@@ -600,13 +605,12 @@ onMounted(() => {
             <section class="relative w-full py-12">
               <div class="container mx-auto px-4">
                 <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
-                  Frequently Asked Questions
+                  Auction FAQ
                 </h2>
 
                 <div class="max-w-full mx-auto space-y-4">
                   <div v-for="(faq, index) in faqs" :key="index"
                     class="border rounded-2xl overflow-hidden shadow-sm bg-white">
-                    <!-- Question -->
                     <button
                       class="w-full flex justify-between items-center px-6 py-4 text-left text-gray-800 font-medium hover:bg-gray-50 transition"
                       @click="toggleFAQ(index)">

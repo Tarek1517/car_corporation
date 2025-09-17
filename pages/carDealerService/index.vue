@@ -109,7 +109,7 @@ onMounted(() => {
                 class="w-full h-full object-cover" />
             </div>
           </div>
-          <div>
+          <div class="max-w-7xl mx-auto px-8 md:px-16">
             <div class="mb-4 flex items-center justify-center">
               <div class="h-0.5 w-8 bg-primary mr-3"></div>
               <span class="text-sm font-semibold tracking-wider text-primary uppercase">Detailed Services</span>

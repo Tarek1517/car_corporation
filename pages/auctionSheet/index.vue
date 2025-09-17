@@ -214,7 +214,7 @@ const filteredSampleFindings = computed(() => {
 </script>
 
 <template>
-  <section class="w-full relative overflow-hidden py-6 md:py-10 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+  <section class="w-full relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
     <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow"></div>
     <div class="absolute bottom-0 left-0 w-[32rem] h-[32rem] bg-secondary/10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl animate-pulse-slow delay-1000"></div>
     <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse-slow delay-500"></div>
@@ -225,19 +225,6 @@ const filteredSampleFindings = computed(() => {
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Car Auction Sheet Guide</h1>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">A comprehensive guide to understanding  auction sheets for used vehicles</p>
       </div>
-
-      <form class="flex justify-center py-6" @submit.prevent="console.log('Searching:', search)">
-        <div class="relative w-full max-w-xl flex">
-          <Icon icon="mdi:search" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-          <input v-model="search" type="text" placeholder="Search auction sheets..."
-            class="w-full pl-10 pr-4 py-3 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none placeholder-gray-400 text-gray-700 shadow-sm" />
-          <button type="submit"
-            class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-r-lg shadow-lg hover:shadow-xl transition-all hover:scale-[1.02]">
-            Search
-          </button>
-        </div>
-      </form>
-      
       <div class="w-full h-full my-8">
         <img src="/images/carDetails.png" alt="Auction Sheet Diagram" class="mx-auto object-contain max-h-[650px] w-[600px]" />
       </div>
@@ -297,7 +284,7 @@ const filteredSampleFindings = computed(() => {
     <div class="container mx-auto px-4">
       <div class="mb-10">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">WHAT IS AN AUCTION SHEET?</h2>
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+        <div class="bg-transparent mb-6">
           <p class="text-gray-600 mb-4">
             Auction sheets are often the first point of inspection when considering to purchase a used car. They are made by professional inspectors and offer a good overview of the vehicle's condition, history and basic information.
           </p>

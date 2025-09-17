@@ -9,9 +9,9 @@ items: [
   { title: "Why Car Corporations", icon: "mdi:information-outline", to: "/about/whyCarCorporationsBD" },
   { title: "Message from Founder", icon: "mdi:account-tie", to: "/about/founder-message" },
   { title: "Message from Co-Founder", icon: "mdi:account-multiple", to: "/about/cofounder-message" },
-  { title: "Message from CEO", icon: "mdi:account-tie-hat", to: "/about/ceo-message" },
+  { title: "Message from CEO", icon: "mdi:account-tie-hat", to: "/showrooms" },
   { title: "Head Office", icon: "mdi:office-building-marker", to: "/head-office/head-office" },
-  { title: "Bank Details", icon: "mdi:bank", to: "/about/bank-details" },
+  { title: "Bank Details", icon: "mdi:bank", to: "/testimonial/testimonial" },
 ],
 
   },
@@ -20,9 +20,9 @@ items: [
     items: [
       { title: "Buy from Live Auction", icon: "mdi:flash", to: "/buyFromAuction" },
       {
-        title: "How to Pre order", icon: "mdi:book-open-page-variant", to: "/",
+        title: "How to Pre order", icon: "mdi:book-open-page-variant", to: "/Pre-order/how-to-pre-order",
         children: [
-          { title: "Pre Order Now", icon: "mdi:package-variant-closed-clock", to: "/" }
+          { title: "Pre Order Now", icon: "mdi:clock-fast", to: "/Pre-order/pre-order" }
         ]
       },
       { title: "Auction Sheet Guide", icon: "mdi:file-document-outline", to: "/auctionSheet" },

@@ -26,7 +26,7 @@ const whyChooseUs = [
 </script>
 
 <template>
-  <section class="w-full relative overflow-hidden py-2 md:py-6 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+  <section class="w-full relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
     <div
       class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow">
     </div>
@@ -37,7 +37,7 @@ const whyChooseUs = [
     </div>
     <div class="absolute inset-0 opacity-[0.03] bg-grid-pattern"></div>
     <div class="relative z-10">
-      <div class="pb-12 relative">
+      <div class="relative">
         <div
           class="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
         </div>
