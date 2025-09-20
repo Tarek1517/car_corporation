@@ -74,20 +74,21 @@ const calculateDuty = () => {
 </script>
 
 <template>
-<section class="w-full bg-white text-gray-800 overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow"></div>
-    <div class="absolute bottom-0 left-0 w-[32rem] h-[32rem] bg-secondary/10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl animate-pulse-slow delay-1000"></div>
-    <div class="absolute inset-0 opacity-[0.04] bg-grid-pattern"></div>
-  <div class="max-w-7xl">
-    <div class="flex items-start mb-6">
-      <h2 class="text-3xl font-bold text-gray-800">Duty Calculator</h2>
-      <div class="ml-4 bg-red-600/10 text-red-600 px-3 py-1 rounded-full text-sm flex items-center">
+<section class="w-full bg-white text-gray-800 overflow-hidden flex justify-center py-12">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow"></div>
+  <div class="absolute bottom-0 left-0 w-[32rem] h-[32rem] bg-secondary/10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl animate-pulse-slow delay-1000"></div>
+  <div class="absolute inset-0 opacity-[0.04] bg-grid-pattern"></div>
+  
+  <div class="max-w-4xl w-full mx-auto px-4 relative z-10">
+    <div class="flex flex-col items-center mb-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Duty Calculator</h2>
+      <div class="bg-red-600/10 text-red-600 px-3 py-1 rounded-full text-sm flex items-center">
         <Icon icon="mdi:calculator" class="w-4 h-4 mr-1" /> Estimate Import Costs
       </div>
     </div>
 
-    <div class="bg-white shadow-md p-6 border border-gray-100">
-      <p class="text-gray-600 mb-6">Calculate estimated import duties based on vehicle details.</p>
+    <div class="bg-white shadow-lg p-8 border border-gray-100 rounded-xl">
+      <p class="text-gray-600 mb-8 text-center">Calculate estimated import duties based on vehicle details.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="relative z-10">
@@ -104,7 +105,7 @@ const calculateDuty = () => {
           <label for="model" class="block text-sm font-medium text-gray-700 mb-2">
             <Icon icon="mdi:car-info" class="w-4 h-4 inline mr-1 text-red-600" /> Select A Model
           </label>
-          <select v-model="selectedModel" id="model" :disabled="!selectedBrand" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 sm:text-sm transition">
+          <select v-model="selectedModel" id="model" :disabled="!selectedBrand" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 sm:text-sm transition disabled:opacity-50">
             <option disabled value="">Please Select A Model</option>
             <option v-for="model in availableModels" :key="model" :value="model">{{ model }}</option>
           </select>
@@ -114,7 +115,7 @@ const calculateDuty = () => {
           <label for="chassis" class="block text-sm font-medium text-gray-700 mb-2">
             <Icon icon="mdi:code-tags" class="w-4 h-4 inline mr-1 text-red-600" /> Select A Chassis Code
           </label>
-          <select v-model="selectedChassis" id="chassis" :disabled="!selectedModel" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 sm:text-sm transition">
+          <select v-model="selectedChassis" id="chassis" :disabled="!selectedModel" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 sm:text-sm transition disabled:opacity-50">
             <option disabled value="">Please Select A Chassis Code</option>
             <option v-for="chassis in availableChassis" :key="chassis" :value="chassis">{{ chassis }}</option>
           </select>
@@ -134,14 +135,14 @@ const calculateDuty = () => {
           <label for="cc" class="block text-sm font-medium text-gray-700 mb-2">
             <Icon icon="mdi:engine" class="w-4 h-4 inline mr-1 text-red-600" /> Choose CC
           </label>
-          <select v-model="selectedCc" id="cc" :disabled="!selectedModel" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 sm:text-sm transition">
+          <select v-model="selectedCc" id="cc" :disabled="!selectedModel" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 sm:text-sm transition disabled:opacity-50">
             <option disabled value="">Choose CC</option>
             <option v-for="cc in availableCcs" :key="cc" :value="cc">{{ cc }}</option>
           </select>
         </div>
       </div>
 
-      <div class="mt-8">
+      <div class="mt-10">
         <button
           @click="calculateDuty"
           type="button"
@@ -173,7 +174,7 @@ const calculateDuty = () => {
         </div>
       </div>
 
-      <div v-else class="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200 text-center">
+      <div v-else class="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200 text-center">
         <Icon icon="mdi:lightbulb-on-outline" class="w-8 h-8 text-gray-400 mx-auto mb-2" />
         <p class="text-gray-500">Enter vehicle details and click "Calculate" to estimate import duties</p>
       </div>
@@ -181,6 +182,5 @@ const calculateDuty = () => {
   </div>
 </section>
 </template>
-
 <style scoped>
 </style>
