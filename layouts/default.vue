@@ -9,15 +9,14 @@
       <div
         class="fixed top-1/2 right-4 z-50 flex flex-col space-y-4 transform -translate-y-1/2 transition-all duration-500"
       >
-        <!-- Roadside Assistance Button -->
         <div
           class="relative group cursor-pointer"
           title="24/7 Roadside Assistance"
         >
           <div
-            class="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rotate-45 transform origin-center shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:shadow-xl hover:animate-pulse"
+            class="w-8 h-8 bg-gradient-to-r from-red-600 to-red-700 rotate-45 transform origin-center shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:shadow-xl hover:animate-pulse"
           >
-            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center -rotate-45">
+            <div class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center -rotate-45">
               <Icon
                 name="mdi:car-repair"
                 class="text-white w-8 h-8"
@@ -33,12 +32,11 @@
           </div>
         </div>
         
-        <!-- Customer Service Button -->
         <div class="relative group cursor-pointer">
           <div
-            class="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rotate-45 transform origin-center shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:shadow-xl hover:animate-pulse"
+            class="w-8 h-8 bg-gradient-to-r from-red-600 to-red-700 rotate-45 transform origin-center shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:shadow-xl hover:animate-pulse"
           >
-            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center -rotate-45">
+            <div class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center -rotate-45">
               <Icon
                 name="mdi:steering"
                 class="text-white w-8 h-8"
@@ -57,9 +55,9 @@
         
         <div class="relative group cursor-pointer">
           <div
-            class="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rotate-45 transform origin-center shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:shadow-xl hover:animate-pulse"
+            class="w-8 h-8 bg-gradient-to-r from-red-600 to-red-700 rotate-45 transform origin-center shadow-lg transition-all duration-300 transform group-hover:scale-110 group-hover:shadow-xl hover:animate-pulse"
           >
-            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center -rotate-45">
+            <div class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center -rotate-45">
               <Icon
                 name="material-symbols:receipt-long"
                 class="text-white w-8 h-8"

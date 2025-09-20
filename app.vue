@@ -3,17 +3,13 @@
     <NuxtRouteAnnouncer />
     <NuxtLayout>
       <NuxtPage />
-      <!-- Custom Car Scrollbar with Headlight Effect -->
       <div class="fixed right-4 bottom-4 z-50 hidden md:block">
         <div class="relative w-16 h-16 group cursor-pointer" @click="scrollToTop">
-          <!-- Main Car Image (Visible by default) -->
           <img
             src="/images/car.png"
             alt="Scroll car"
             class="w-full h-full object-contain transform transition-all duration-500 absolute inset-0"
           />
-          
-          <!-- Hover Car Image with Headlights On -->
           <img
             src="/images/car-focus.png"
             alt="Scroll car with headlights on"
@@ -26,9 +22,24 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+onMounted(() => {
+  const TAWK_PROPERTY_ID = '68ce5aed1ee8fa1927a91f1a';
+  const TAWK_WIDGET_ID = '1j5j16cvt';
+
+  const script = document.createElement('script');
+  // Use backticks for template literal interpolation
+  script.src = `https://embed.tawk.to/${TAWK_PROPERTY_ID}/${TAWK_WIDGET_ID}`;
+  script.async = true;
+  script.charset = 'UTF-8';
+  script.setAttribute('crossorigin', '*');
+  document.body.appendChild(script); // append to body instead of head
+});
 </script>
 
 <style>

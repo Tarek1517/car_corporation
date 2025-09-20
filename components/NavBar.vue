@@ -58,6 +58,7 @@ const menus = [
       { title: "Walk-Around", icon: "mdi:account-tie", to: "/Ready-Stock/Walk-around" },
       { title: "Video Reviews", icon: "mdi:account-multiple", to: "/Ready-Stock/review" },
       { title: "Showroom", icon: "mdi:account-tie-hat", to: "/showrooms" },
+      { title: "Stock List", icon: "mdi:car", to: "/StockList" }
     ]
   },
 ];
