@@ -5,14 +5,36 @@ const searchQuery = ref("");
 const menus = [
   {
     title: "About Us",
-items: [
-  { title: "Why Car Corporations", icon: "mdi:information-outline", to: "/about/whyCarCorporationsBD" },
-  { title: "Message from Founder", icon: "mdi:account-tie", to: "/about/founder-message" },
-  { title: "Message from Co-Founder", icon: "mdi:account-multiple", to: "/about/cofounder-message" },
-  { title: "Message from CEO", icon: "mdi:account-tie-hat", to: "/showrooms" },
-  { title: "Head Office", icon: "mdi:office-building-marker", to: "/head-office/head-office" },
-  { title: "Bank Details", icon: "mdi:bank", to: "/testimonial/testimonial" },
-],
+    items: [
+      { title: "Why Car Corporations", icon: "mdi:information-outline", to: "/about/whyCarCorporationsBD" },
+      { title: "Message from Founder", icon: "mdi:account-tie", to: "/message/message-founder" },
+      { title: "Message from Co-Founder", icon: "mdi:account-multiple", to: "/message/message-co-founder" },
+      { title: "Message from CEO", icon: "mdi:account-tie-hat", to: "/message/message-ceo" },
+      { title: "Head Office", icon: "mdi:office-building-marker", to: "/head-office/head-office" },
+      { title: "Bank Details", icon: "mdi:bank", to: "/about/Bank-details" },
+      {
+        title: "Gallery of Happiness", icon: "mdi:image", to: "/",
+        children: [
+          {
+            title: "Picture Gallery", icon: "mdi:image-multiple", to: "/about/Gallery-Happiness",
+          },
+          {
+            title: "Client Speaks for US", icon: "mdi-account-group", to: "/about/client",
+          }
+        ]
+      },
+      {
+        title: "News Room", icon: "mdi:newspaper", to: "/",
+        children: [
+          {
+            title: "Blogs", icon: "mdi:newspaper-variant", to: "/blogs/blogPost"
+          },
+              {
+            title: "FAQs", icon: "mdi:help-circle", to: "/about/FAQs"
+          }
+        ]
+      }
+    ],
 
   },
   {
@@ -30,14 +52,14 @@ items: [
     ]
   },
   {
-    title: "Services",
+    title: "Stock",
     items: [
-      { title: "Live Auction", icon: "mdi:audio-video", to: "/carAuction" },
-      { title: "Vehicle Import", icon: "mdi:car-hatchback", to: "/vehicleImport" },
-      { title: "Reconditioned Vehicles", icon: "mdi:car-wash", to: "/reconditionedVehicles" },
-      { title: "Car Dealer Services", icon: "mdi:handshake", to: "/carDealerService" },
-    ],
-  }
+      { title: "Find a car", icon: "mdi:information-outline", to: "/Ready-Stock/FindACar" },
+      { title: "Walk-Around", icon: "mdi:account-tie", to: "/Ready-Stock/Walk-around" },
+      { title: "Video Reviews", icon: "mdi:account-multiple", to: "/Ready-Stock/review" },
+      { title: "Showroom", icon: "mdi:account-tie-hat", to: "/showrooms" },
+    ]
+  },
 ];
 </script>
 
@@ -49,7 +71,7 @@ items: [
           <img src="/images/logo.jpg" alt="CarCorporation BD" class="h-auto w-12 rounded-full" />
         </NuxtLink>
         <nav class="hidden lg:flex items-center space-x-1">
-          <div class="relative">
+             <div class="relative">
             <NuxtLink to="/"
               class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
               <span class="relative z-10">Home</span>
@@ -57,15 +79,6 @@ items: [
                 class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 group-hover:w-4/5"></span>
             </NuxtLink>
           </div>
-          <div class="relative">
-            <NuxtLink to="/StockList"
-              class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
-              <span class="relative z-10">Stock List</span>
-              <span
-                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 group-hover:w-4/5"></span>
-            </NuxtLink>
-          </div>
-
           <div v-for="(menu, index) in menus" :key="index" @mouseenter="activeMenu = index"
             @mouseleave="activeMenu = null; activeSubmenu = null" class="relative">
             <button
@@ -115,16 +128,122 @@ items: [
               </div>
             </transition>
           </div>
-
           <div class="relative">
-            <NuxtLink to="/contact-us/contact"
+            <NuxtLink to="/verifyAuction"
               class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
-              <span class="relative z-10">Contact Us</span>
+              <span class="relative z-10 neon-text">True Report</span>
+              <span
+                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 group-hover:w-4/5"></span>
             </NuxtLink>
+          </div>
+          <div class="relative">
+            <NuxtLink to="/StockList"
+              class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
+              <span class="relative z-10">Duty Calculator</span>
+              <span
+                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 group-hover:w-4/5"></span>
+            </NuxtLink>
+          </div>
+          <div class="relative">
+            <NuxtLink to="/shipping-info"
+              class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
+              <span class="relative z-10">Shipping</span>
+            </NuxtLink>
+          </div>
+          <!-- <div class="relative" @mouseenter="activeMenu = 'gallery'" @mouseleave="activeMenu = null">
+            <button
+              class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
+              <span class="relative z-10">Gallery</span>
+              <Icon name="mdi:chevron-down"
+                class="ml-1.5 text-gray-400 text-lg transition-transform duration-200 group-hover:rotate-180 group-hover:text-primary" />
+            </button>
+
+            <transition name="dropdown">
+              <div v-if="activeMenu === 'gallery'"
+                class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 bg-white rounded-xl shadow-2xl border border-gray-100">
+                <div class="py-2">
+                  <NuxtLink to="/shipping-info/methods"
+                    class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
+                    <Icon name="mdi:image-multiple"
+                      class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
+                    <span class="font-medium">Picture Gallery</span>
+                  </NuxtLink>
+
+                  <NuxtLink to="/shipping-info/tracking"
+                    class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
+                    <Icon name="mdi-account-group"
+                      class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
+                    <span class="font-medium">Our Client Speaks for US</span>
+                  </NuxtLink>
+
+                </div>
+              </div>
+            </transition>
+          </div>
+          <div class="relative" @mouseenter="activeMenu = 'news'" @mouseleave="activeMenu = null">
+            <button
+              class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
+              <span class="relative z-10">News</span>
+              <Icon name="mdi:chevron-down"
+                class="ml-1.5 text-gray-400 text-lg transition-transform duration-200 group-hover:rotate-180 group-hover:text-primary" />
+            </button>
+
+            <transition name="dropdown">
+              <div v-if="activeMenu === 'news'"
+                class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 bg-white rounded-xl shadow-2xl border border-gray-100">
+                <div class="py-2">
+                  <NuxtLink to="/shipping-info/methods"
+                    class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
+                    <Icon name="mdi:newspaper"
+                      class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
+                    <span class="font-medium">Blog</span>
+                  </NuxtLink>
+
+                  <NuxtLink to="/shipping-info/tracking"
+                    class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
+                    <Icon name="mdi:help-circle"
+                      class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
+                    <span class="font-medium">FAQs</span>
+                  </NuxtLink>
+
+                </div>
+              </div>
+            </transition>
+          </div> -->
+
+          <div class="relative" @mouseenter="activeMenu = 'contact'" @mouseleave="activeMenu = null">
+            <button
+              class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
+              <span class="relative z-10">Contact</span>
+              <Icon name="mdi:chevron-down"
+                class="ml-1.5 text-gray-400 text-lg transition-transform duration-200 group-hover:rotate-180 group-hover:text-primary" />
+            </button>
+
+            <transition name="dropdown">
+              <div v-if="activeMenu === 'contact'"
+                class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 bg-white rounded-xl shadow-2xl border border-gray-100">
+                <div class="py-2">
+                  <NuxtLink to="/contact-us/Dhaka-Office"
+                    class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
+                    <Icon name="mdi:office-building-marker"
+                      class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
+                    <span class="font-medium">Dhaka Office</span>
+                  </NuxtLink>
+
+                  <NuxtLink to="/contact-us/Chittagong-Office"
+                    class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
+                    <Icon name="mdi:office-building-marker"
+                      class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
+                    <span class="font-medium">Chittagong Office</span>
+                  </NuxtLink>
+
+                </div>
+              </div>
+            </transition>
           </div>
         </nav>
 
-        <div class="flex items-center space-x-4">
+        <!-- <div class="flex items-center space-x-4">
           <div class="relative hidden md:block">
             <div class="relative group">
               <input v-model="searchQuery" type="text" placeholder="Find cars, parts & more..."
@@ -147,7 +266,7 @@ items: [
           <button class="lg:hidden p-2 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors">
             <Icon name="mdi:menu" class="text-2xl text-gray-700" />
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </header>

@@ -292,7 +292,6 @@ const showMore = () => {
             </div>
           </div>
           
-          <!-- Load More Button -->
           <div class="text-center" v-if="visibleCars < cars.length">
             <button @click="showMore" class="px-8 py-3 bg-white text-primary border border-primary rounded-xl font-semibold shadow-md hover:bg-primary hover:text-white transition-all duration-300">
               Load More Vehicles
@@ -331,7 +330,6 @@ const showMore = () => {
         </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-6 relative z-10">
 
-  <!-- Card 1: Live Auctions -->
   <div
     class="group text-start bg-white rounded-2xl p-6 transition-all duration-500 hover:shadow-xl shadow-md border border-gray-100 hover:border-primary/20 hover:-translate-y-2 relative overflow-hidden">
     <div

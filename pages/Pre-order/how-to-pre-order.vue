@@ -42,7 +42,6 @@ const toggleFAQ = (index) => {
         </div>
         <div class="absolute inset-0 opacity-[0.05] bg-grid-pattern"></div>
         <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-6">
-
             <div class="text-left text-white space-y-4">
                 <h1 class="text-3xl md:text-4xl font-bold uppercase">
                     Order a Japanese Vehicle
@@ -53,7 +52,7 @@ const toggleFAQ = (index) => {
                 </p>
             </div>
             <div class="flex justify-center md:justify-end">
-                <img src="../../public//images/honda-suv.png" alt="Japanese Car"
+                <img src="../../public/images/honda-suv.png" alt="Japanese Car"
                     class="w-full max-w-md drop-shadow-xl" />
             </div>
         </div>

@@ -33,13 +33,15 @@ const getCarName = (carName: string, index: number) => {
         @mouseleave="activeIndex = null"
       >
         <!-- Car Image -->
-        <div class="h-[550px] w-full overflow-hidden relative">
+         <NuxtLink to="/cars/car-details">
+                  <div class="h-[550px] w-full overflow-hidden relative">
           <img
             :src="car.image"
             :alt="car.name"
             class="h-full w-auto object-cover object-[10%_center] transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:object-[10%_center] group-hover:scale-[1.15] brightness-95 group-hover:brightness-100"
           />
         </div>
+         </NuxtLink>
 
         <!-- Red Bar with Car Name -->
         <div

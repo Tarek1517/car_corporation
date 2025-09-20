@@ -10,18 +10,7 @@ const headOffice = {
   workingHours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
   mob: ["+880-1704848771", "+880-1704848772"],
   map: "https://maps.google.com/?q=Tejgaon+Dhaka",
-  departments: [
-    { name: "Sales Department", email: "sales@carcorporationbd.com", phone: "+880-1704848771" },
-    { name: "Customer Support", email: "support@carcorporationbd.com", phone: "+880-1704848772" },
-    { name: "Import & Logistics", email: "import@carcorporationbd.com", phone: "+880-1704848773" },
-  ]
 };
-
-const keyPersonnel = [
-  { name: "Mr. Rakibul Islam", title: "Chief Executive Officer", image: "/images/avater1.png" },
-  { name: "Ms. Farhana Akter", title: "Head of Sales", image: "/images/avater2.png" },
-  { name: "Mr. Tanvir Ahmed", title: "Operations Manager", image: "/images/avater3.png" },
-];
 
 const branchOffices = [
   {
@@ -53,14 +42,26 @@ const branchOffices = [
     map: "https://maps.google.com/?q=Sonadanga+Khulna",
   },
 ];
+
+// Combine head office + branches into one array
+const showrooms = [
+  {
+    city: headOffice.city,
+    name: headOffice.name,
+    address: headOffice.address,
+    tel: headOffice.tel,
+    mob: headOffice.mob,
+    map: headOffice.map,
+  },
+  ...branchOffices
+];
 </script>
 
 <template>
   <section class="relative w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
-    <!-- Hero Section -->
+    <!-- Hero Banner -->
     <div class="relative h-[500px] md:h-[600px] w-full">
-      <img src="/images/showrooms.jpg" alt="Showrooms Background"
-        class="w-full h-full object-cover" />
+      <img src="/images/showrooms.jpg" alt="Showrooms Background" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
         <h2 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
@@ -75,9 +76,13 @@ const branchOffices = [
         </p>
       </div>
     </div>
+
+    <!-- Products Section -->
     <div class="contain">
-        <HomeProductsSection/>
+      <HomeProductsSection />
     </div>
+
+    <!-- Showrooms Section -->
     <div class="relative py-16 bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
@@ -132,24 +137,29 @@ const branchOffices = [
         </div>
       </div>
     </div>
-    <HomeBlogSection/>
-          <div class="mt-16 pt-12 border-t border-gray-200">
-        <p class="text-center text-gray-500 text-sm mb-6">Trusted by automotive enthusiasts and businesses nationwide
-        </p>
-        <div class="flex flex-wrap justify-center gap-8 md:gap-12 opacity-60">
-          <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
-            <Icon name="mdi:shield-check" class="w-full h-full text-primary" />
-          </div>
-          <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
-            <Icon name="mdi:medal" class="w-full h-full text-primary" />
-          </div>
-          <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
-            <Icon name="mdi:account-group" class="w-full h-full text-primary" />
-          </div>
-          <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
-            <Icon name="mdi:calendar-star" class="w-full h-full text-primary" />
-          </div>
+
+    <!-- Blog Section -->
+    <HomeBlogSection />
+
+    <!-- Trusted Icons -->
+    <div class="mt-16 pt-12 border-t border-gray-200">
+      <p class="text-center text-gray-500 text-sm mb-6">
+        Trusted by automotive enthusiasts and businesses nationwide
+      </p>
+      <div class="flex flex-wrap justify-center gap-8 md:gap-12 opacity-60">
+        <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
+          <Icon name="mdi:shield-check" class="w-full h-full text-primary" />
+        </div>
+        <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
+          <Icon name="mdi:medal" class="w-full h-full text-primary" />
+        </div>
+        <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
+          <Icon name="mdi:account-group" class="w-full h-full text-primary" />
+        </div>
+        <div class="h-8 w-auto grayscale hover:grayscale-0 transition-all">
+          <Icon name="mdi:calendar-star" class="w-full h-full text-primary" />
         </div>
       </div>
+    </div>
   </section>
 </template>

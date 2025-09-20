@@ -223,8 +223,7 @@ const showMore = () => {
                         </button>
                     </div>
                     <div class="absolute bottom-4 left-4">
-                        <span class="px-3 py-1 bg-black/70 text-white text-xs font-semibold rounded-full">{{ car.type
-                            }}</span>
+                        <span class="px-3 py-1 bg-black/70 text-white text-xs font-semibold rounded-full">{{ car.type}}</span>
                     </div>
                 </div>
                 <div class="p-6">

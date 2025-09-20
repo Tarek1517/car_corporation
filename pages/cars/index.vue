@@ -5,7 +5,7 @@ import CarOverview from './carOverview.vue';
 import DutyCalculator from './dutyCalculator.vue';
 import CarCard from '~/components/CarCard.vue';
 const cars = ref([
-  { src: "/images/crossred.jpeg", label: "Low Mileage" },
+  { src: "/images/crossred.jpeg" },
   { src: "/images/Rav4.jpeg" },
   { src: "/images/rav4-1.jpg" },
   { src: "/images/rav4-2.png" },

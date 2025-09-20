@@ -136,7 +136,6 @@ const paymentMethods = [
         </p>
       </div>
 
-      <!-- Payment section -->
       <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-gray-100 hover:shadow-xl transition-all duration-300 mt-8">
         <h3 class="text-center text-2xl font-semibold text-gray-800 mb-6">
           Secure Payment Options
