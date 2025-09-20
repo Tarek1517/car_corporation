@@ -137,7 +137,7 @@ const menus = [
             </NuxtLink>
           </div>
           <div class="relative">
-            <NuxtLink to="/StockList"
+            <NuxtLink to="/cars/dutyCalculator"
               class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
               <span class="relative z-10">Duty Calculator</span>
               <span
