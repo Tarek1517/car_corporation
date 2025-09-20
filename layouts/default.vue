@@ -1,6 +1,7 @@
 <template>
   <div class="w-full relative">
     <header>
+      <MobileHeader/>
       <Header />
     </header>
 

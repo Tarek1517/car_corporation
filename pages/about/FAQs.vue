@@ -116,14 +116,12 @@ const toggleFAQ = (index) => {
               </h4>
               <Icon :icon="faq.open ? 'mdi:chevron-up' : 'mdi:chevron-down'" class="w-6 h-6 text-primary" />
             </div>
-            <transition name="fade">
-              <p
-                v-if="faq.open"
-                class="mt-3 text-gray-600 leading-relaxed animate-fade-in"
-              >
-                {{ faq.answer }}
-              </p>
-            </transition>
+<transition name="fade">
+  <p v-if="faq.open" class="mt-3 text-gray-600 leading-relaxed animate-fade-in">
+    {{ faq.answer }}
+  </p>
+</transition>
+
           </div>
         </div>
       </div>

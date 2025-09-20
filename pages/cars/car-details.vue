@@ -1,11 +1,5 @@
 <template>
   <section class="w-full bg-white text-gray-800 overflow-hidden">
-    <!-- Animated Background Elements -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow"></div>
-    <div class="absolute bottom-0 left-0 w-[32rem] h-[32rem] bg-secondary/10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl animate-pulse-slow delay-1000"></div>
-    <div class="absolute inset-0 opacity-[0.04] bg-grid-pattern"></div>
-    
-    <!-- Hero Section -->
     <div class="relative bg-gray-100 min-h-[70vh] flex items-center">
       <img src="/images/city-new-web.png" alt="Honda City" class="w-full h-full object-cover absolute inset-0" />
       <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
@@ -42,7 +36,6 @@
       </div>
     </div>
 
-    <!-- Styling Section -->
     <section class="max-w-7xl mx-auto px-6 py-20">
       <div class="mb-16 text-center">
         <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded-full mb-4">DESIGN</span>
@@ -96,8 +89,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Space and Storage -->
     <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-16 text-center">
@@ -148,8 +139,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Interior Dash -->
     <section class="max-w-7xl mx-auto px-6 py-20">
       <div class="mb-16 text-center">
         <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded-full mb-4">TECHNOLOGY</span>

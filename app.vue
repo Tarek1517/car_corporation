@@ -33,7 +33,6 @@ onMounted(() => {
   const TAWK_WIDGET_ID = '1j5j16cvt';
 
   const script = document.createElement('script');
-  // Use backticks for template literal interpolation
   script.src = `https://embed.tawk.to/${TAWK_PROPERTY_ID}/${TAWK_WIDGET_ID}`;
   script.async = true;
   script.charset = 'UTF-8';
@@ -84,4 +83,5 @@ body::before {
   pointer-events: none;
   z-index: -1;
 }
+
 </style>

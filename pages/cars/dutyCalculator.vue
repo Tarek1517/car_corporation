@@ -75,10 +75,6 @@ const calculateDuty = () => {
 
 <template>
 <section class="w-full bg-white text-gray-800 overflow-hidden flex justify-center py-12">
-  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow"></div>
-  <div class="absolute bottom-0 left-0 w-[32rem] h-[32rem] bg-secondary/10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl animate-pulse-slow delay-1000"></div>
-  <div class="absolute inset-0 opacity-[0.04] bg-grid-pattern"></div>
-  
   <div class="max-w-4xl w-full mx-auto px-4 relative z-10">
     <div class="flex flex-col items-center mb-8 text-center">
       <h2 class="text-3xl font-bold text-gray-800 mb-4">Duty Calculator</h2>
