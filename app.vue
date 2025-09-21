@@ -37,7 +37,7 @@ onMounted(() => {
   script.async = true;
   script.charset = 'UTF-8';
   script.setAttribute('crossorigin', '*');
-  document.body.appendChild(script); // append to body instead of head
+  document.body.appendChild(script); 
 });
 </script>
 
@@ -49,22 +49,18 @@ onMounted(() => {
   --color-secondary: #ff0000;
 }
 
-/* Hide browser scrollbar completely */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for Firefox */
 * {
   scrollbar-width: none;
 }
 
-/* Hide scrollbar for IE and Edge */
 body {
   -ms-overflow-style: none;
 }
 
-/* Background pattern with subtle car elements */
 body {
   position: relative;
 }
