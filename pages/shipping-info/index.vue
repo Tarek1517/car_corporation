@@ -14,9 +14,9 @@
       <div class="absolute inset-0 bg-black/50"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
         <h2 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
-          Video
+          Shipping 
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary drop-shadow">
-            Reviews
+            Info
           </span>
         </h2>
         <p class="text-lg md:text-xl text-gray-200 max-w-2xl">
