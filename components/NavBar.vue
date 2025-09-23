@@ -12,28 +12,6 @@ const menus = [
       { title: "Message from CEO", icon: "mdi:account-tie-hat", to: "/message/message-ceo" },
       { title: "Head Office", icon: "mdi:office-building-marker", to: "/head-office/head-office" },
       { title: "Bank Details", icon: "mdi:bank", to: "/about/Bank-details" },
-      {
-        title: "Gallery of Happiness", icon: "mdi:image", to: "/",
-        children: [
-          {
-            title: "Picture Gallery", icon: "mdi:image-multiple", to: "/about/Gallery-Happiness",
-          },
-          {
-            title: "Client Speaks for US", icon: "mdi-account-group", to: "/about/client",
-          }
-        ]
-      },
-      {
-        title: "News Room", icon: "mdi:newspaper", to: "/",
-        children: [
-          {
-            title: "Blogs", icon: "mdi:newspaper-variant", to: "/blogs/blogPost"
-          },
-              {
-            title: "FAQs", icon: "mdi:help-circle", to: "/about/FAQs"
-          }
-        ]
-      }
     ],
 
   },
@@ -72,14 +50,6 @@ const menus = [
           <img src="/images/logo.jpg" alt="CarCorporation BD" class="h-auto w-12 rounded-full" />
         </NuxtLink>
         <nav class="hidden lg:flex items-center space-x-1">
-             <div class="relative">
-            <NuxtLink to="/"
-              class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
-              <span class="relative z-10">Home</span>
-              <span
-                class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 group-hover:w-4/5"></span>
-            </NuxtLink>
-          </div>
           <div v-for="(menu, index) in menus" :key="index" @mouseenter="activeMenu = index"
             @mouseleave="activeMenu = null; activeSubmenu = null" class="relative">
             <button
@@ -151,7 +121,7 @@ const menus = [
               <span class="relative z-10">Shipping</span>
             </NuxtLink>
           </div>
-          <!-- <div class="relative" @mouseenter="activeMenu = 'gallery'" @mouseleave="activeMenu = null">
+          <div class="relative" @mouseenter="activeMenu = 'gallery'" @mouseleave="activeMenu = null">
             <button
               class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
               <span class="relative z-10">Gallery</span>
@@ -163,14 +133,14 @@ const menus = [
               <div v-if="activeMenu === 'gallery'"
                 class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 bg-white rounded-xl shadow-2xl border border-gray-100">
                 <div class="py-2">
-                  <NuxtLink to="/shipping-info/methods"
+                  <NuxtLink to="/about/Gallery-Happiness"
                     class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
                     <Icon name="mdi:image-multiple"
                       class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
                     <span class="font-medium">Picture Gallery</span>
                   </NuxtLink>
 
-                  <NuxtLink to="/shipping-info/tracking"
+                  <NuxtLink to="/about/client"
                     class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
                     <Icon name="mdi-account-group"
                       class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
@@ -193,16 +163,16 @@ const menus = [
               <div v-if="activeMenu === 'news'"
                 class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 bg-white rounded-xl shadow-2xl border border-gray-100">
                 <div class="py-2">
-                  <NuxtLink to="/shipping-info/methods"
+                  <NuxtLink to="/blogs/blogPost"
                     class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
                     <Icon name="mdi:newspaper"
                       class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
                     <span class="font-medium">Blog</span>
                   </NuxtLink>
 
-                  <NuxtLink to="/shipping-info/tracking"
+                  <NuxtLink to="/about/FAQs"
                     class="px-5 py-3 flex items-center text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-200 group">
-                    <Icon name="mdi:help-circle"
+                    <Icon name="mdi:help"
                       class="mr-3 text-primary text-lg group-hover:scale-110 transition-transform" />
                     <span class="font-medium">FAQs</span>
                   </NuxtLink>
@@ -210,7 +180,7 @@ const menus = [
                 </div>
               </div>
             </transition>
-          </div> -->
+          </div>
 
           <div class="relative" @mouseenter="activeMenu = 'contact'" @mouseleave="activeMenu = null">
             <button

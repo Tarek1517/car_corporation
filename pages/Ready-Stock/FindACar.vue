@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { Icon } from '@iconify/vue';
+import CarCard from "~/components/CarCard.vue";
 
 const cars = [
   {
@@ -498,8 +499,6 @@ const formatPrice = (price) => {
                     </label>
                   </div>
                 </div>
-
-                <!-- Condition Filter -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">Condition</h3>
                   <div class="space-y-2">
@@ -511,7 +510,6 @@ const formatPrice = (price) => {
                   </div>
                 </div>
 
-                <!-- Year Filter -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">Year</h3>
                   <div class="space-y-2 max-h-40 overflow-y-auto">
@@ -523,7 +521,6 @@ const formatPrice = (price) => {
                   </div>
                 </div>
 
-                <!-- Transmission Filter -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">Transmission</h3>
                   <div class="space-y-2">
@@ -534,8 +531,6 @@ const formatPrice = (price) => {
                     </label>
                   </div>
                 </div>
-
-                <!-- Fuel Type Filter -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">Fuel Type</h3>
                   <div class="space-y-2">
@@ -561,7 +556,6 @@ const formatPrice = (price) => {
           </div>
         </transition>
 
-        <!-- Car Listings -->
         <div class="flex-1">
           <div class="flex justify-between items-center mb-6">
             <div>
@@ -579,121 +573,14 @@ const formatPrice = (price) => {
             </button>
           </div>
           
-          <!-- Grid View -->
           <div v-else-if="viewMode === 'grid'" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              v-for="(car, index) in filteredCars.slice(0, visibleCars)"
-              :key="car.id"
-              class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100 flex flex-col hover:-translate-y-1"
-            >
-              <div class="relative w-full h-56">
-                <img
-                  :src="car.image"
-                  :alt="car.name"
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <div v-if="car.condition"
-                  class="absolute top-4 left-4 px-3 py-1 text-white bg-gradient-to-t from-primary to-secondary text-xs font-semibold rounded-full shadow-md"          
-                >
-                  {{ car.condition }}
-                </div>
-                <div class="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                  {{ car.year }}
-                </div>
-              </div>
-              
-              <!-- Content Section -->
-              <div class="flex-1 p-6 flex flex-col">
-                <div class="flex justify-between items-start mb-4">
-                  <div>
-                    <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
-                      {{ car.type }}
-                    </span>
-                    <h3 class="text-xl font-bold text-gray-900 mt-2">
-                      {{ car.name }}
-                    </h3>
-                    <p class="text-sm text-gray-500 mt-1">{{ car.make }}</p>
-                  </div>
-                  <div class="text-right">
-                    <div class="text-lg font-bold text-primary">{{ formatPrice(car.price) }}</div>
-                    <button class="text-gray-400 hover:text-red-500 transition-colors p-1 mt-1">
-                      <Icon icon="heroicons:heart" class="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-3 mb-6">
-                  <div
-                    class="flex items-center text-start gap-2 p-3 bg-gray-50 rounded-xl transition-colors hover:bg-primary/5"
-                  >
-                    <div class="p-2 bg-primary/10 rounded-lg">
-                      <Icon icon="line-md:calendar" class="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <div class="text-xs text-gray-500 mb-1">Year</div>
-                      <div class="text-sm font-semibold text-gray-900">
-                        {{ car.year }}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    class="flex items-center text-start gap-2 p-3 bg-gray-50 rounded-xl transition-colors hover:bg-primary/5"
-                  >
-                    <div class="p-2 bg-primary/10 rounded-lg">
-                      <Icon icon="line-md:speedometer-loop" class="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <div class="text-xs text-gray-500 mb-1">Mileage</div>
-                      <div class="text-sm font-semibold text-gray-900">{{ car.mileage }}</div>
-                    </div>
-                  </div>
-
-                  <div
-                    class="flex items-center text-start gap-2 p-3 bg-gray-50 rounded-xl transition-colors hover:bg-primary/5"
-                  >
-                    <div class="p-2 bg-primary/10 rounded-lg">
-                      <Icon icon="mdi:gas-station" class="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <div class="text-xs text-gray-500 mb-1">Fuel</div>
-                      <div class="text-sm font-semibold text-gray-900">{{ car.fuelType }}</div>
-                    </div>
-                  </div>
-
-                  <div
-                    class="flex items-center text-start gap-2 p-3 bg-gray-50 rounded-xl transition-colors hover:bg-primary/5"
-                  >
-                    <div class="p-2 bg-primary/10 rounded-lg">
-                      <Icon icon="mdi:car-shift-pattern" class="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <div class="text-xs text-gray-500 mb-1">Transmission</div>
-                      <div class="text-sm font-semibold text-gray-900">{{ car.transmission }}</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="mt-auto flex justify-between items-center">
-                  <div class="flex gap-2">
-                    <button class="px-4 py-2 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors">
-                      Compare
-                    </button>
-                    <button 
-                      @click="viewCarDetails(car)"
-                      class="flex items-center bg-gradient-to-t from-primary to-secondary text-white font-semibold text-sm px-4 py-2 rounded-lg transition-all duration-300 hover:shadow-lg hover:translate-x-1"
-                    >
-                      View Details
-                      <Icon
-                        icon="heroicons:arrow-long-right"
-                        class="w-5 h-5 ml-2 transition-transform hover:translate-x-1"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <CarCard
+          v-for="car in cars.slice(0, visibleCars)"
+          :key="car.id"
+          :car="car"
+          class="w-full transform hover:scale-105 transition-transform duration-300"
+        />
+      
           </div>
           
           <!-- List View -->

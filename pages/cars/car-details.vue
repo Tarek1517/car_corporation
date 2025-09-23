@@ -230,7 +230,6 @@
       </div>
     </section>
 
-    <!-- Illuminated Dials -->
     <section class="max-w-7xl mx-auto px-6 py-20">
       <div class="mb-16 text-center">
         <span class="inline-block px-3 py-1 bg-red-100 text-red-800 text-xs font-semibold rounded-full mb-4">INTERIOR</span>
