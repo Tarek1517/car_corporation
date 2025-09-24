@@ -30,8 +30,8 @@ const cars = ref([
     grade: '5',
     chassisCode: 'ACA33-789012',
     year: '2020',
-    color: 'Pearl White',
-    colorCode: '#F8F8FF',
+    color: 'black',
+    colorCode: '#000000',
     engineCC: '2000',
     fuel: 'Petrol',
     mileage: '38,000',
@@ -86,7 +86,39 @@ const cars = ref([
     auctionPoint: 'USS Nagoya',
     price: '2,950,000 Taka',
     status: 'Available'
-  }
+  },
+{
+  picture: '/images/car-57.png',
+  stockId: 'CRW-2021-011',
+  makeModel: 'Toyota Crown Hybrid',
+  grade: '4.5',
+  chassisCode: 'AZSH21-123456',
+  year: '2021',
+  color: 'Blue',
+  colorCode: '#1E3A8A',
+  engineCC: '2500',
+  fuel: 'Hybrid',
+  mileage: '22,400',
+  auctionPoint: 'USS Tokyo',
+  price: '7,850,000 Taka',
+  status: 'Upcoming'
+},
+{
+  picture: '/images/car-yellow.png',
+  stockId: 'PRI-2019-022',
+  makeModel: 'Toyota Prius Hybrid',
+  grade: '4',
+  chassisCode: 'ZVW50-334455',
+  year: '2019',
+  color: 'Yellow',
+  colorCode: '#FFD700',
+  engineCC: '1800',
+  fuel: 'Hybrid',
+  mileage: '39,800',
+  auctionPoint: 'USS Yokohama',
+  price: '3,450,000 Taka',
+  status: 'Sold'
+}
 ]);
 
 const filteredCars = computed(() => {
