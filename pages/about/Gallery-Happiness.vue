@@ -24,23 +24,25 @@ const cars = ref([
     <div class="absolute inset-0 opacity-[0.03] bg-grid-pattern"></div>
     <div class="container mx-auto px-4 py-8 md:py-16">
       <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-8 md:mb-12">
-        Delivered Cars
+        Delivered Cars To Our Customer
       </h1>
       <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
         Here are some of the cars we have successfully delivered to our happy customers. Each car is a testament to our commitment to quality and service.
       </p>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div
           v-for="(car, index) in cars"
           :key="index"
           class="relative bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow"
         >
-          <img
-            :src="car.image"
-            alt="Delivered Car"
-            class="w-full h-full object-cover transition-transform group-hover:scale-105"
-          />
+  <NuxtLink to="/about/single-story">
+    <img
+      :src="car.image"
+      alt="Delivered Car"
+      class="w-full h-full object-cover transition-transform group-hover:scale-105"
+    />
+  </NuxtLink>
         </div>
       </div>
     </div>

@@ -47,20 +47,14 @@ const carOverview = [
         <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
           <div class="text-center mb-6">
             <img src="/images/avater1.png" alt="Admin Avatar" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-blue-50" />
-            <h3 class="text-xl font-bold text-gray-800">admin</h3>
+            <h3 class="text-xl font-bold text-gray-800">Car Corporation</h3>
             <p class="text-gray-600 flex items-center justify-center mt-1">
               <Icon icon="mdi:map-marker" class="mr-1 text-gray-500" />
-              943 Broadway, Brooklyn
+              Dhaka 1212
             </p>
           </div>
           
           <div class="flex justify-center gap-4 mb-6">
-            <a href="#" class="flex flex-col items-center text-white transition">
-              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-1">
-                <Icon icon="mdi:map-marker-radius" class="w-6 h-6" />
-              </div>
-              <span class="text-sm text-gray-600">Get Direction</span>
-            </a>
             <a href="tel:+88123456789" class="flex flex-col items-center text-white transition">
               <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-1">
                 <Icon icon="mdi:phone" class="w-6 h-6" />
@@ -69,12 +63,7 @@ const carOverview = [
             </a>
           </div>
           
-          <div class="space-y-3">
-            <button class="w-full bg-primary text-white py-3 rounded-lg hover:bg-secondary transition flex items-center justify-center gap-2 font-medium">
-              <Icon icon="mdi:message-text" class="w-5 h-5" />
-              Message Dealer
-            </button>
-            
+          <div class="space-y-3">            
             <button class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition flex items-center justify-center gap-2 font-medium">
               <Icon icon="mdi:whatsapp" class="w-5 h-5" />
               Chat Via WhatsApp

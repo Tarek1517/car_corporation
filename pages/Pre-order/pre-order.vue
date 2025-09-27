@@ -323,7 +323,7 @@ const resetForm = () => {
               <div class="mt-6 pt-4 border-t border-white/20">
                 <button 
                   @click="submitForm" 
-                  class="w-full py-3 px-6 bg-white text-primary rounded-lg font-semibold flex items-center justify-center hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all shadow-md hover:shadow-lg"
+                  class="w-full py-3 px-6 bg-white text-primary rounded-lg font-semibold flex items-center justify-center hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all shadow-md hover:shadow-lg hover:bg-primary hover:text-white"
                 >
                   <span>Submit Pre-Order</span>
                   <Icon icon="material-symbols:send-rounded" class="h-5 w-5 ml-2 transform -rotate-45" />

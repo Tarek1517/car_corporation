@@ -3,121 +3,6 @@ import { ref, computed, onMounted } from "vue";
 import { Icon } from '@iconify/vue';
 import CarCard from "~/components/CarCard.vue";
 
-const cars = [
-  {
-    id: 1,
-    type: "SUV",
-    name: "Toyota RAV4",
-    year: 2022,
-    make: "Toyota",
-    image: "/images/Rav4.jpeg",
-    price: 32450,
-    mileage: "18,240 mi",
-    condition: "Used",
-    transmission: "Automatic",
-    fuelType: "Gasoline",
-    engine: "2.5L 4-Cylinder",
-    features: ["AWD", "Backup Camera", "Touchscreen"],
-    description: "Well-maintained RAV4 with excellent fuel economy and reliability."
-  },
-  {
-    id: 2,
-    type: "SUV",
-    name: "Toyota Corolla Cross",
-    year: 2022,
-    make: "Toyota",
-    image: "/images/cross 1.jpeg",
-    price: 28900,
-    mileage: "12,150 mi",
-    condition: "New",
-    transmission: "Automatic",
-    fuelType: "Hybrid",
-    engine: "2.0L 4-Cylinder",
-    features: ["Hybrid", "Lane Assist", "Apple CarPlay"],
-    description: "Brand new Corolla Cross with hybrid technology and advanced safety features."
-  },
-  {
-    id: 3,
-    type: "SUV",
-    name: "Toyota Harrier",
-    year: 2021,
-    make: "Toyota",
-    image: "/images/Harrier.jpeg",
-    price: 36750,
-    mileage: "22,405 mi",
-    condition: "Used",
-    transmission: "Automatic",
-    fuelType: "Gasoline",
-    engine: "2.0L Turbo",
-    features: ["Leather Seats", "Sunroof", "Premium Audio"],
-    description: "Luxury SUV with premium features and powerful turbo engine."
-  },
-  {
-    id: 4,
-    type: "SUV",
-    name: "Corolla Cross",
-    year: 2020,
-    make: "Toyota",
-    image: "/images/crossred.jpeg",
-    price: 26800,
-    mileage: "30,120 mi",
-    condition: "New",
-    transmission: "Automatic",
-    fuelType: "Gasoline",
-    engine: "2.0L 4-Cylinder",
-    features: ["FWD", "Bluetooth", "Advanced Safety"],
-    description: "Efficient and reliable crossover with modern tech features."
-  },
-  {
-    id: 5,
-    type: "SUV",
-    name: "Toyota Cross",
-    year: 2021,
-    make: "Toyota",
-    image: "/images/toyotacorollacross.jpeg",
-    price: 29500,
-    mileage: "15,670 mi",
-    condition: "New",
-    transmission: "Automatic",
-    fuelType: "Gasoline",
-    engine: "2.0L 4-Cylinder",
-    features: ["AWD", "Wireless Charging", "Adaptive Cruise"],
-    description: "Versatile SUV with all-wheel drive and modern convenience features."
-  },
-  {
-    id: 6,
-    type: "Van",
-    name: "Toyota NOAH",
-    year: 2020,
-    make: "Toyota",
-    image: "/images/noah.jpeg",
-    price: 31200,
-    mileage: "25,890 mi",
-    condition: "Used",
-    transmission: "Automatic",
-    fuelType: "Gasoline",
-    engine: "2.0L 4-Cylinder",
-    features: ["7-Seater", "Sliding Doors", "Rear Camera"],
-    description: "Spacious family van with flexible seating configuration."
-  },
-  {
-    id: 7,
-    type: "Sedan",
-    name: "Honda Civic",
-    year: 2019,
-    make: "Honda",
-    image: "/images/civik2.png",
-    price: 23900,
-    mileage: "35,405 mi",
-    condition: "New",
-    transmission: "CVT",
-    fuelType: "Gasoline",
-    engine: "1.5L Turbo",
-    features: ["Sport Mode", "Apple CarPlay", "Honda Sensing"],
-    description: "Sporty sedan with turbocharged engine and advanced safety suite."
-  },
-];
-
 const isSidebarOpen = ref(false);
 const typeFilter = ref([]);
 const conditionFilter = ref([]);
@@ -129,14 +14,10 @@ const visibleCars = ref(6);
 const selectedCar = ref(null);
 const showCarDetails = ref(false);
 const sortBy = ref('default');
-const viewMode = ref('grid'); // 'grid' or 'list'
-
-// Price range filter
+const viewMode = ref('grid'); 
 const priceRange = ref([0, 50000]);
 const minPrice = computed(() => Math.min(...cars.map(car => car.price)));
 const maxPrice = computed(() => Math.max(...cars.map(car => car.price)));
-
-// Initialize price range
 onMounted(() => {
   priceRange.value = [minPrice.value, maxPrice.value];
 });
@@ -149,8 +30,6 @@ const carFuelTypes = computed(() => [...new Set(cars.map(car => car.fuelType))])
 
 const filteredCars = computed(() => {
   let result = [...cars];
-  
-  // Apply search filter
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase();
     result = result.filter(car => 
@@ -160,35 +39,29 @@ const filteredCars = computed(() => {
     );
   }
 
-  // Apply type filter
   if (typeFilter.value.length > 0) {
     result = result.filter(car => typeFilter.value.includes(car.type));
   }
 
-  // Apply condition filter
   if (conditionFilter.value.length > 0) {
     result = result.filter(car => conditionFilter.value.includes(car.condition));
   }
 
-  // Apply year filter
   if (yearFilter.value.length > 0) {
     result = result.filter(car => yearFilter.value.includes(car.year));
   }
 
-  // Apply transmission filter
   if (transmissionFilter.value.length > 0) {
     result = result.filter(car => transmissionFilter.value.includes(car.transmission));
   }
 
-  // Apply fuel type filter
   if (fuelTypeFilter.value.length > 0) {
     result = result.filter(car => fuelTypeFilter.value.includes(car.fuelType));
   }
 
-  // Apply price range filter
   result = result.filter(car => car.price >= priceRange.value[0] && car.price <= priceRange.value[1]);
   
-  // Apply sorting
+
   if (sortBy.value === 'price-low-high') {
     result.sort((a, b) => a.price - b.price);
   } else if (sortBy.value === 'price-high-low') {
@@ -202,12 +75,100 @@ const filteredCars = computed(() => {
   return result;
 });
 
-const showMore = () => {
-  visibleCars.value += 3;
-  if (visibleCars.value >= filteredCars.value.length) {
-    visibleCars.value = filteredCars.value.length;
-  }
-};
+const cars = [
+  {
+    id: 1,
+    type: "SUV",
+    name: "Toyota RAV4",
+    year: 2022,
+    make: "Toyota",
+    image: "/images/Rav4.jpeg",
+    price: 32450,
+    mileage: "18,240 mi",
+    condition: "Used",
+    rating: 4.5,
+    reviewCount: 128
+  },
+  {
+    id: 2,
+    type: "SUV",
+    name: "Toyota Corolla Cross",
+    year: 2022,
+    make: "Toyota",
+    image: "/images/cross 1.jpeg",
+    price: 28900,
+    mileage: "12,150 mi",
+    condition: "New",
+    rating: 4.2,
+    reviewCount: 89
+  },
+  {
+    id: 3,
+    type: "SUV",
+    name: "Toyota Harrier",
+    year: 2021,
+    make: "Toyota",
+    image: "/images/Harrier.jpeg",
+    price: 36750,
+    mileage: "22,405 mi",
+    rating: 4.8,
+    reviewCount: 156
+  },
+  {
+    id: 4,
+    type: "SUV",
+    name: "Corolla Cross",
+    year: 2020,
+    make: "Toyota",
+    image: "/images/crossred.jpeg",
+    price: 26800,
+    mileage: "30,120 mi",
+    condition: "New",
+    rating: 3.9,
+    reviewCount: 67
+  },
+  {
+    id: 5,
+    type: "SUV",
+    name: "Toyota Cross",
+    year: 2021,
+    make: "Toyota",
+    image: "/images/toyotacorollacross.jpeg",
+    price: 29500,
+    mileage: "15,670 mi",
+    condition: "New",
+    rating: 4.1,
+    reviewCount: 94
+  },
+  {
+    id: 6,
+    type: "Van",
+    name: "Toyota NOAH",
+    year: 2020,
+    make: "Toyota",
+    image: "/images/noah.jpeg",
+    price: 31200,
+    mileage: "25,890 mi",
+    condition: "Used",
+    rating: 4.3,
+    reviewCount: 112
+  },
+  {
+    id: 7,
+    type: "Sedan",
+    name: "Honda Civic",
+    year: 2019,
+    make: "Honda",
+    image: "/images/civik2.png",
+    price: 23900,
+    mileage: "35,405 mi",
+    condition: "New",
+    rating: 4.6,
+    reviewCount: 203
+  },
+];
+
+
 
 const resetFilters = () => {
   typeFilter.value = [];
@@ -224,16 +185,9 @@ const resetFilters = () => {
 const viewCarDetails = (car) => {
   selectedCar.value = car;
   showCarDetails.value = true;
-  // Prevent body scroll when modal is open
   document.body.style.overflow = 'hidden';
 };
 
-const closeCarDetails = () => {
-  showCarDetails.value = false;
-  selectedCar.value = null;
-  // Restore body scroll
-  document.body.style.overflow = '';
-};
 
 const formatPrice = (price) => {
   return new Intl.NumberFormat('en-US', {
@@ -242,6 +196,7 @@ const formatPrice = (price) => {
     maximumFractionDigits: 0
   }).format(price);
 };
+
 </script>
 
 <template>
@@ -374,7 +329,7 @@ const formatPrice = (price) => {
                   v-model="priceRange[0]" 
                   :min="minPrice" 
                   :max="maxPrice"
-                  class="w-full accent-primary mb-2" 
+                  class="w-full text-primary mb-2" 
                 />
                 <input 
                   type="range" 
@@ -473,14 +428,14 @@ const formatPrice = (price) => {
                       v-model="priceRange[0]" 
                       :min="minPrice" 
                       :max="maxPrice"
-                      class="w-full accent-primary mb-2" 
+                      class="w-full accent-red-500 mb-2" 
                     />
                     <input 
                       type="range" 
                       v-model="priceRange[1]" 
                       :min="minPrice" 
                       :max="maxPrice"
-                      class="w-full accent-primary" 
+                      class="w-full accent-red-500" 
                     />
                     <div class="flex justify-between mt-2 text-sm text-gray-600">
                       <span>{{ formatPrice(priceRange[0]) }}</span>
@@ -583,7 +538,6 @@ const formatPrice = (price) => {
       
           </div>
           
-          <!-- List View -->
           <div v-else class="space-y-6">
             <div
               v-for="(car, index) in filteredCars.slice(0, visibleCars)"
@@ -606,8 +560,6 @@ const formatPrice = (price) => {
                   {{ car.year }}
                 </div>
               </div>
-              
-              <!-- Content Section -->
               <div class="flex-1 p-6 flex flex-col">
                 <div class="flex justify-between items-start mb-4">
                   <div>
@@ -620,7 +572,7 @@ const formatPrice = (price) => {
                     <p class="text-sm text-gray-500 mt-1">{{ car.make }}</p>
                   </div>
                   <div class="text-right">
-                    <div class="text-lg font-bold text-primary">{{ formatPrice(car.price) }}</div>
+                    <div class="text-lg font-bold text-primary">$ {{ formatPrice(car.price) }}</div>
                     <button class="text-gray-400 hover:text-red-500 transition-colors p-1 mt-1">
                       <Icon icon="heroicons:heart" class="w-5 h-5" />
                     </button>
@@ -724,75 +676,6 @@ const formatPrice = (price) => {
       </div>
     </div>
   </section>
-
-  <!-- Car Details Modal -->
-  <transition name="fade">
-    <div v-if="showCarDetails && selectedCar" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
-      <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="relative">
-          <img :src="selectedCar.image" :alt="selectedCar.name" class="w-full h-64 object-cover">
-          <button @click="closeCarDetails" class="absolute top-4 right-4 bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
-            <Icon icon="mdi:close" class="h-6 w-6 text-gray-700" />
-          </button>
-          <div class="absolute bottom-4 left-4 bg-black/70 text-white text-xs px-3 py-1 rounded-full">
-            {{ selectedCar.year }} {{ selectedCar.make }}
-          </div>
-        </div>
-        
-        <div class="p-6">
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
-                {{ selectedCar.type }}
-              </span>
-              <h2 class="text-2xl font-bold text-gray-900 mt-2">{{ selectedCar.name }}</h2>
-              <p class="text-gray-600">{{ selectedCar.description }}</p>
-            </div>
-            <div class="text-right">
-              <div class="text-2xl font-bold text-primary">{{ formatPrice(selectedCar.price) }}</div>
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div class="bg-gray-50 p-4 rounded-xl">
-              <div class="text-xs text-gray-500 mb-1">Year</div>
-              <div class="font-semibold">{{ selectedCar.year }}</div>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-xl">
-              <div class="text-xs text-gray-500 mb-1">Mileage</div>
-              <div class="font-semibold">{{ selectedCar.mileage }}</div>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-xl">
-              <div class="text-xs text-gray-500 mb-1">Transmission</div>
-              <div class="font-semibold">{{ selectedCar.transmission }}</div>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-xl">
-              <div class="text-xs text-gray-500 mb-1">Fuel Type</div>
-              <div class="font-semibold">{{ selectedCar.fuelType }}</div>
-            </div>
-          </div>
-          
-          <div class="mb-6">
-            <h3 class="font-bold text-lg mb-3">Key Features</h3>
-            <div class="flex flex-wrap gap-2">
-              <span v-for="(feature, index) in selectedCar.features" :key="index" class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-                {{ feature }}
-              </span>
-            </div>
-          </div>
-          
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button class="flex-1 px-4 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors">
-              Schedule Test Drive
-            </button>
-            <button class="flex-1 px-4 py-3 bg-gradient-to-t from-primary to-secondary text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-              Make an Offer
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition>
 </template>
 
 <style scoped>

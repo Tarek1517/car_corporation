@@ -10,7 +10,7 @@ const cars = [
     year: 2022,
     make: "Toyota",
     image: "/images/Rav4.jpeg",
-    price: "$32,450",
+    price: "32,450",
     mileage: "18,240 mi",
     condition: "Used"
   },
@@ -21,7 +21,7 @@ const cars = [
     year: 2022,
     make: "Toyota",
     image: "/images/cross 1.jpeg",
-    price: "$28,900",
+    price: "28,900",
     mileage: "12,150 mi",
     condition: "New"
   },
@@ -32,7 +32,7 @@ const cars = [
     year: 2021,
     make: "Toyota",
     image: "/images/Harrier.jpeg",
-    price: "$36,750",
+    price: "36,750",
     mileage: "22,405 mi",
    
   },
@@ -43,7 +43,7 @@ const cars = [
     year: 2020,
     make: "Toyota",
     image: "/images/crossred.jpeg",
-    price: "$26,800",
+    price: "26,800",
     mileage: "30,120 mi",
     condition: "New"
   },
@@ -54,7 +54,7 @@ const cars = [
     year: 2021,
     make: "Toyota",
     image: "/images/toyotacorollacross.jpeg",
-    price: "$29,500",
+    price: "29,500",
     mileage: "15,670 mi",
     condition: "New"
   },
@@ -65,7 +65,7 @@ const cars = [
     year: 2020,
     make: "Toyota",
     image: "/images/noah.jpeg",
-    price: "$31,200",
+    price: "31,200",
     mileage: "25,890 mi",
     condition: "Used"
   },
@@ -76,7 +76,7 @@ const cars = [
     year: 2019,
     make: "Honda",
     image: "/images/civik2.png",
-    price: "$23,900",
+    price: "23,900",
     mileage: "35,405 mi",
     condition: "New"
   },

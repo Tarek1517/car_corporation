@@ -1,7 +1,7 @@
 <script setup>
 const activeMenu = ref(null);
 const activeSubmenu = ref(null);
-const searchQuery = ref("");
+// const searchQuery = ref("");
 const menus = [
   {
     title: "About Us",
@@ -54,9 +54,9 @@ const menus = [
             @mouseleave="activeMenu = null; activeSubmenu = null" class="relative">
             <button
               class="px-5 py-2 text-gray-800 font-medium hover:text-primary transition flex items-center group relative">
-              <span class="relative z-10" :class="menu.title === 'Live Auction' ? 'neon-text' : ''">
-                {{ menu.title }}
-              </span>
+<span class="relative z-10" :class="['Live Auction', 'Stock'].includes(menu.title) ? 'neon-text' : ''">
+  {{ menu.title }}
+</span>
 
               <span
                 class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transform -translate-x-1/2 transition-all duration-300 group-hover:w-4/5"></span>

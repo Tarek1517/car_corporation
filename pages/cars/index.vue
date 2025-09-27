@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import CarOverview from './carOverview.vue';
 import DutyCalculator from './dutyCalculator.vue';
 import CarCard from '~/components/CarCard.vue';
+
 const cars = ref([
   { src: "/images/crossred.jpeg" },
   { src: "/images/Rav4.jpeg" },
@@ -24,6 +25,7 @@ const closeModal = () => {
   showModal.value = false;
   activeImage.value = null;
 };
+
 const carsDetails = [
     {
         id: 1,
@@ -58,20 +60,58 @@ const carsDetails = [
   },
 ];
 
+const comments = ref([
+    {
+        id: 1,
+        author: 'Rahim Khan',
+        date: new Date('2024-09-05'),
+        content: 'Excellent guide! I used Car Corporation for my Toyota Noah import from Japan auction. The shipping and customs process was seamless thanks to their team.',
+        rating: 5
+    },
+    {
+        id: 2,
+        author: 'Ayesha Rahman',
+        date: new Date('2024-09-08'),
+        content: 'This helped me avoid common pitfalls with BRTA registration. Highly recommend their inspection services for JDM cars!',
+        rating: 4
+    }
+]);
+
+const newComment = ref({
+    author: '',
+    email: '',
+    content: '',
+    rating: 0 
+});
+
+const submitComment = () => {
+    if (newComment.value.author && newComment.value.email && newComment.value.content && newComment.value.rating > 0) {
+        comments.value.push({
+            id: comments.value.length + 1,
+            author: newComment.value.author,
+            date: new Date(),
+            content: newComment.value.content,
+            avatar: '/images/default-avatar.png',
+            rating: newComment.value.rating
+        });
+
+        newComment.value = {
+            author: '',
+            email: '',
+            content: '',
+            rating: 0
+        };
+
+        alert('Your review has been submitted! We\'ll review it for our Bangladesh car import community.');
+    } else {
+        alert('Please fill in all fields and provide a rating');
+    }
+};
+
 </script>
 
 <template>
   <section class="w-full relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
-    <div
-      class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl animate-pulse-slow">
-    </div>
-    <div
-      class="absolute bottom-0 left-0 w-[32rem] h-[32rem] bg-secondary/10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl animate-pulse-slow delay-1000">
-    </div>
-    <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse-slow delay-500">
-    </div>
-    <div class="absolute inset-0 opacity-[0.03] bg-grid-pattern"></div>
-
     <section class="relative z-10 py-2">
       <div class="min-h-screen bg-gray-50">
         <div class="container mx-auto px-4 py-2">
@@ -335,6 +375,93 @@ const carsDetails = [
         </div>
       </div>
     </section>
+        <div class="items-center mx-auto h-[1px] bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 my-8 max-w-7xl">
+    </div>
+<section class="mt-12 pt-8 max-w-7xl justify-center items-center mx-auto">
+    <h3 class="text-2xl font-semibold mb-6 text-gray-500">Reviews ({{ comments.length }})</h3>
+
+    <div class="bg-white p-6 rounded-lg shadow mb-8">
+        <h4 class="font-semibold mb-4 text-gray-500">Leave a Review</h4>
+        <form @submit.prevent="submitComment">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <input v-model="newComment.author" type="text" id="name"
+                        class="w-full p-2 border rounded focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-gray-500"
+                        placeholder="Enter your Name" required />
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input v-model="newComment.email" type="email" id="email"
+                        class="w-full p-2 border rounded focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-gray-500"
+                        placeholder="Enter you Email" required />
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Your Rating</label>
+                <div class="flex items-center space-x-1">
+                    <button 
+                        v-for="star in 5" 
+                        :key="star"
+                        type="button"
+                        @click="newComment.rating = star"
+                        class="focus:outline-none transition-transform hover:scale-110"
+                    >
+                        <Icon 
+                            :icon="star <= newComment.rating ? 'mdi:star' : 'mdi:star-outline'" 
+                            class="w-8 h-8" 
+                            :class="star <= newComment.rating ? 'text-yellow-400' : 'text-gray-300'"
+                        />
+                    </button>
+                    <span class="ml-2 text-sm text-gray-600">{{ newComment.rating }}/5</span>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="comment" class="block text-sm font-medium text-gray-700 mb-1">Comment</label>
+                <textarea v-model="newComment.content" id="comment" rows="4"
+                    class="w-full p-2 border rounded focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-gray-500"
+                    placeholder="Give Your Comment here" required></textarea>
+            </div>
+            <button type="submit"
+                class="bg-primary text-white py-2 px-6 rounded hover:bg-primary/90 transition flex items-center gap-2">
+                <Icon icon="mdi:send-variant" class="w-5 h-5" />
+                Submit Review
+            </button>
+        </form>
+    </div>
+
+    <div class="space-y-6">
+        <div v-for="comment in comments" :key="comment.id" class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-start gap-4">
+
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-2">
+                        <h4 class="font-semibold">{{ comment.author }}</h4>
+                        <span class="text-sm text-gray-500">{{ comment.date.toLocaleDateString() }}</span>
+                    </div>
+                    
+                    <div class="flex items-center mb-3">
+                        <div class="flex items-center space-x-1">
+                            <Icon 
+                                v-for="star in 5" 
+                                :key="star"
+                                :icon="star <= comment.rating ? 'mdi:star' : 'mdi:star-outline'" 
+                                class="w-5 h-5" 
+                                :class="star <= comment.rating ? 'text-yellow-400' : 'text-gray-300'"
+                            />
+                        </div>
+                        <span class="ml-2 text-sm text-gray-600">{{ comment.rating }}/5</span>
+                    </div>
+                    
+                    <p class="text-gray-700">{{ comment.content }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
     <div class="items-center mx-auto h-[1px] bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 my-8 max-w-7xl">
     </div>
 <section class="max-w-7xl mx-auto p-4">
@@ -348,12 +475,5 @@ const carsDetails = [
         />
       </div>
 </section>
-
-
-
-
-    <!-- <section class="flex items-start justify-start max-w-4xl mx-auto p-4">
-      <DutyCalculator/>
-    </section> -->
   </section>
 </template>

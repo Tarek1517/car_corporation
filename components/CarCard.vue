@@ -89,7 +89,7 @@ const props = defineProps({
       <div class="mt-auto p-5 pt-0 flex justify-between items-center">
         <div class="flex flex-col">
           <div class="text-xs text-gray-500">Starting at</div>
-          <div class="text-2xl font-bold text-primary">{{ car.price }}</div>
+          <div class="text-2xl font-bold text-primary">$ {{ car.price }}</div>
         </div>
         <div
           class="flex items-center bg-gradient-to-t from-primary to-secondary text-white font-semibold text-sm px-4 py-2 rounded-lg transition-all duration-300 group-hover:shadow-lg group-hover:translate-x-1"

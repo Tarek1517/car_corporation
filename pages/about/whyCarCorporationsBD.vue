@@ -64,13 +64,10 @@ const whyChooseUs = [
                   </p>
                 </div>
               </div>
-
-              <!-- Services Cards Floating on Hero -->
               <div class="relative -mt-30 z-20">
                 <div class="max-w-7xl mx-auto px-4">
                   <div
                     class="bg-white rounded-3xl shadow-xl p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                    <!-- Card 1 -->
                     <div
                       class="group text-start rounded-2xl p-4 transition-all duration-500 hover:shadow-xl shadow-md border border-gray-100 hover:border-primary/20 hover:-translate-y-2 relative overflow-hidden">
                       <div
@@ -87,8 +84,6 @@ const whyChooseUs = [
                         class="text-primary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-100 opacity-0 relative z-10">Explore
                         auctions</span>
                     </div>
-
-                    <!-- Card 2 -->
                     <div
                       class="group text-start rounded-2xl p-4 transition-all duration-500 hover:shadow-xl shadow-md border border-gray-100 hover:border-secondary/20 hover:-translate-y-2 relative overflow-hidden">
                       <div
@@ -105,8 +100,6 @@ const whyChooseUs = [
                         class="text-secondary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-100 opacity-0 relative z-10">Import
                         process</span>
                     </div>
-
-                    <!-- Card 3 -->
                     <div
                       class="group text-start rounded-2xl p-4 transition-all duration-500 hover:shadow-xl shadow-md border border-gray-100 hover:border-primary/20 hover:-translate-y-2 relative overflow-hidden">
                       <div
@@ -123,8 +116,6 @@ const whyChooseUs = [
                         class="text-primary text-sm font-medium transition-all duration-300 ml-3 group-hover:opacity-100 opacity-0 relative z-10">View
                         inventory</span>
                     </div>
-
-                    <!-- Card 4 -->
                     <div
                       class="group text-start rounded-2xl p-4 transition-all duration-500 hover:shadow-xl shadow-md border border-gray-100 hover:border-secondary/20 hover:-translate-y-2 relative overflow-hidden">
                       <div
@@ -316,8 +307,6 @@ const whyChooseUs = [
                   </div>
                 </div>
               </div>
-
-              <!-- Floating card 2 -->
               <div
                 class="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-lg border border-gray-100 animate-float delay-1000">
                 <div class="flex items-center">
@@ -330,8 +319,6 @@ const whyChooseUs = [
                   </div>
                 </div>
               </div>
-
-              <!-- Accent element -->
               <div
                 class="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-r from-primary to-secondary rounded-2xl shadow-lg -z-10">
               </div>
@@ -339,7 +326,6 @@ const whyChooseUs = [
           </div>
         </div>
       </section>
-      <!-- Services -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         <div
           class="group text-start bg-white rounded-2xl p-6 transition-all duration-500 hover:shadow-xl shadow-md border border-gray-100 hover:border-primary/20 hover:-translate-y-2 relative overflow-hidden">
@@ -369,8 +355,6 @@ const whyChooseUs = [
               auctions</span>
           </div>
         </div>
-
-        <!-- Card 2: Vehicle Import -->
         <div
           class="group text-start bg-white rounded-2xl p-6 transition-all duration-500 hover:shadow-xl shadow-md border border-gray-100 hover:border-secondary/20 hover:-translate-y-2 relative overflow-hidden">
           <div

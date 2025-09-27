@@ -6,7 +6,7 @@ const headOffice = {
   name: "Car Corporation HQ",
   address: "102, Shahid Tajuddin Ahmed Sarani, Tejgaon Industrial Area, Dhaka-1208",
   tel: "+880-2-8170902",
-  email: "info@carcorporationbd.com",
+  email: "carcorporationbd@gmail.com",
   workingHours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
   mob: ["+880-1704848771", "+880-1704848772"],
   map: "https://maps.google.com/?q=Tejgaon+Dhaka",

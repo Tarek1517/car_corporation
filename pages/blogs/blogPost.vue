@@ -348,7 +348,7 @@ const submitComment = () => {
                         </div>
                         <button type="submit"
                             class="bg-primary text-white py-2 px-6 rounded hover:bg-primary/90 transition flex items-center gap-2">
-                            <Icon icon="mdi:send" class="w-5 h-5" />
+                            <Icon icon="mdi:send-variant" class="w-5 h-5" />
                             Submit Comment
                         </button>
                     </form>

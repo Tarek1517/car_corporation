@@ -225,7 +225,7 @@ const handleSearch = (event) => {
             <td class="px-4 py-4 whitespace-nowrap">
               <img :src="car.picture" :alt="car.makeModel" class="h-16 w-24 object-cover rounded-md">
             </td>
-            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ car.stockId }}</td>
+            <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><NuxtLink to="/cars">{{ car.stockId }}</NuxtLink></td>
             <td class="px-4 py-4 text-sm text-gray-900">{{ car.makeModel }}</td>
             <td class="px-4 py-4 whitespace-nowrap">
               <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full" 

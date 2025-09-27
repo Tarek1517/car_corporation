@@ -49,10 +49,6 @@ const playVideo = (id) => {
   isPlaying.value = true;
 };
 
-// const stopVideo = () => {
-//   activeVideo.value = null;
-//   isPlaying.value = false;
-// };
 
 const contactSales = () => {
   alert('Contact form would open here. In a real app, this would open a modal or navigate to a contact page.');
@@ -87,8 +83,6 @@ const contactSales = () => {
           </button>
         </div>
       </section>
-
-      <!-- Featured Video Section -->
       <section class="max-w-6xl mx-auto px-4 py-16">
         <div class="flex justify-between items-center mb-8">
           <h2 class="text-3xl font-bold text-gray-800">Featured Walkaround</h2>
@@ -124,7 +118,6 @@ const contactSales = () => {
         </div>
       </section>
 
-      <!-- More Walkarounds Section -->
       <section class="max-w-6xl mx-auto px-4 py-16">
         <div class="flex justify-between items-center mb-8">
           <h2 class="text-3xl font-bold text-gray-800">More Walkarounds</h2>
