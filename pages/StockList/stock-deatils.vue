@@ -1,281 +1,214 @@
 <script setup>
-import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
-const toast = useToast();
-function showToast() {
-  toast.add({
-    title: 'Inquiry sent!',
-    description: 'Your request was submitted successfully. We will contact you soon.',
-    icon: 'mdi:check', 
-    color: 'green', 
-    timeout: 4000, 
-  })
-}
-const vehicleData = ref({
-  name: "2020 Toyota Prius",
-  chassis: "ZVW51-6189222",
-  price: "32,500 $",
-  status: "Available",
-  specifications: {
-    stockId: "RRGI0905",
-    brand: "TOYOTA",
-    model: "PRIUS",
-    year: "2020",
-    mileage: "25,000 km",
-    condition: "Used",
-    fuelType: "Hybrid",
-    transmission: "Automatic",
-    engine: "1.8L Hybrid",
-    exteriorColor: "Midnight Black Metallic",
-    interiorColor: "Fabric - Black",
-    vin: "JTDKARFU2L1234567",
-    driveType: "FWD",
-    fuelEconomy: "4.5 L/100km"
-  },
-  description: "This 2020 Toyota Prius is in excellent condition with low mileage. It features a hybrid engine, automatic transmission, and comes with a full service history. The vehicle is available for immediate purchase.",
-  features: [
-    "Touchscreen Infotainment System",
-    "Backup Camera",
-    "Advanced Safety Features",
-    "Keyless Entry",
-    "Climate Control",
-    "Adaptive Cruise Control",
-    "Lane Departure Alert",
-    "Pre-Collision System"
-  ],
-  contact: {
-    phone: "09613 787878",
-    email: "carcorporationbd@gmail.com",
-    address: "102, Shahid Tajuddin Ahmed Sarani, Tejgaon Industrial Area, Dhaka-1208s"
-  },
-  images: [
-    "/images/car-yellow.png",
-    "/images/car-yellow.png",
-    "/images/car-yellow.png",
-    "/images/car-yellow.png"
-  ]
-});
+import { ref } from 'vue';
+import CarCard from '~/components/CarCard.vue';
 
-const activeImage = ref(0);
+const carsDetails = [
+  {
+    id: 1,
+    type: "SUV",
+    name: "Toyota RAV4",
+    year: 2022,
+    make: "Toyota",
+    image: "/images/Rav4.jpeg",
+    price: "$32,450",
+    mileage: "18,240 mi",
+  },
+  {
+    id: 2,
+    type: "SUV",
+    name: "Toyota Corolla Cross",
+    year: 2022,
+    make: "Toyota",
+    image: "/images/cross 1.jpeg",
+    price: "$28,900",
+    mileage: "12,150 mi",
+  },
+  {
+    id: 3,
+    type: "SUV",
+    name: "Toyota Harrier",
+    year: 2021,
+    make: "Toyota",
+    image: "/images/Harrier.jpeg",
+    price: "$36,750",
+    mileage: "22,405 mi",
+  },
+];
 
-const setActiveImage = (index) => {
-  activeImage.value = index;
+const cars = ref([
+  { src: "/images/crossred.jpeg" },
+  { src: "/images/Rav4.jpeg" },
+  { src: "/images/rav4-1.jpg" },
+  { src: "/images/rav4-2.png" },
+  { src: "/images/rav4-3.jpg" },
+]);
+
+const activeImage = ref(cars.value[0].src);
+const currentIndex = ref(0);
+
+const setActiveImage = (src, index) => {
+  activeImage.value = src;
+  currentIndex.value = index;
+};
+
+const nextImage = () => {
+  currentIndex.value = (currentIndex.value + 1) % cars.value.length;
+  activeImage.value = cars.value[currentIndex.value].src;
+};
+
+const prevImage = () => {
+  currentIndex.value = (currentIndex.value - 1 + cars.value.length) % cars.value.length;
+  activeImage.value = cars.value[currentIndex.value].src;
 };
 </script>
 
 <template>
-  <section class="w-full bg-white text-gray-800 overflow-hidden">
-    <div class="container mx-auto px-4 relative py-12">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl text-gray-600 font-semibold">Stock Details</h2>
-
+  <section class="min-h-screen bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Toyota - Corolla Cross - 2022 - Hybrid Z</h1>
       </div>
-      <div class="rounded-xl shadow-lg overflow-hidden max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6">
-          <div>
-            <div class="rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center h-96 mb-4">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <div class="lg:w-3/5">
+          <div class="flex flex-col gap-4">
+            <div class="flex-1 relative rounded-xl overflow-hidden shadow-lg">
               <img 
-                :src="vehicleData.images[activeImage]" 
-                :alt="vehicleData.name" 
-                class="w-full h-full object-contain"
+                :src="activeImage" 
+                class="w-full h-80 lg:h-[500px] object-cover transition-opacity duration-300" 
+                alt="Toyota Corolla Cross" 
+              />
+              <button
+                class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300 hover:scale-110"
+                @click="prevImage"
+              >
+                <Icon icon="mdi:chevron-left" class="w-6 h-6 text-gray-700" />
+              </button>
+              <button
+                class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/90 p-3 rounded-full shadow-lg hover:bg-white transition-all duration-300 hover:scale-110"
+                @click="nextImage"
+              >
+                <Icon icon="mdi:chevron-right" class="w-6 h-6 text-gray-700" />
+              </button>
+            </div>
+            <div class="flex gap-3 overflow-x-auto py-2 px-1">
+              <img 
+                v-for="(car, index) in cars" 
+                :key="index" 
+                :src="car.src" 
+                @click="setActiveImage(car.src, index)"
+                class="w-24 h-20 object-cover rounded-lg cursor-pointer border-2 transition-all duration-300 hover:shadow-md"
+                :class="currentIndex === index ? 'border-red-500 shadow-md' : 'border-gray-200 hover:border-gray-400'" 
               />
             </div>
-            
-            <div class="grid grid-cols-4 gap-2">
-              <div 
-                v-for="(image, index) in vehicleData.images" 
-                :key="index"
-                @click="setActiveImage(index)"
-                class="cursor-pointer rounded-md overflow-hidden h-20 bg-gray-100 flex items-center justify-center"
-                :class="{'ring-2 ring-primary': activeImage === index}"
-              >
-                <img 
-                  :src="image" 
-                  :alt="`${vehicleData.name} view ${index + 1}`" 
-                  class="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-start mb-4">
-              <div>
-                <h3 class="text-2xl font-bold">{{ vehicleData.name }}</h3>
-                <p class="text-gray-600">{{ vehicleData.chassis }}</p>
-              </div>
-              <div class="flex space-x-2">
-                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                  {{ vehicleData.status }}
-                </span>
-              </div>
-            </div>
-            
-            <div class="mb-6 flex items-baseline">
-              <p class="text-3xl font-bold text-primary">{{ vehicleData.price }}</p>
-              <span class="ml-2 text-gray-500">Negotiable</span>
-            </div>
-            <div class="grid grid-cols-3 gap-4 mb-6">
-              <div class="bg-gray-50 rounded-lg p-3 text-center">
-                <p class="text-sm text-gray-500">Year</p>
-                <p class="font-semibold">{{ vehicleData.specifications.year }}</p>
-              </div>
-              <div class="bg-gray-50 rounded-lg p-3 text-center">
-                <p class="text-sm text-gray-500">Mileage</p>
-                <p class="font-semibold">{{ vehicleData.specifications.mileage }}</p>
-              </div>
-              <div class="bg-gray-50 rounded-lg p-3 text-center">
-                <p class="text-sm text-gray-500">Fuel</p>
-                <p class="font-semibold">{{ vehicleData.specifications.fuelType }}</p>
-              </div>
-            </div>
-            <div class="flex space-x-3 mb-6">
-              <button class="flex-1 bg-primary hover:bg-primary/90 text-white font-medium py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
-                <Icon icon="mdi:phone" class="w-5 h-5 mr-2" />
-                Call Now
-              </button>
-              <button class="flex-1 bg-white border border-primary text-primary hover:bg-primary/5 font-medium py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
-                <Icon icon="mdi:message-text" class="w-5 h-5 mr-2" />
-                WhatsApp
-              </button>
-            </div>
-            <div class="mb-6">
-              <h4 class="text-lg font-semibold mb-3 border-b pb-1">Description</h4>
-              <p class="text-gray-700">{{ vehicleData.description }}</p>
-            </div>
-            <div>
-              <h4 class="text-lg font-semibold mb-3 border-b pb-1">Key Features</h4>
-              <div class="grid grid-cols-2 gap-2">
-                <div v-for="(feature, index) in vehicleData.features" :key="index" class="flex items-center">
-                  <Icon icon="mdi:check" class="w-4 h-4 text-green-500 mr-2" />
-                  <span class="text-gray-700">{{ feature }}</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold mb-4">Detailed Specifications</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Stock ID:</span>
-              <span class="font-medium">{{ vehicleData.specifications.stockId }}</span>
+        <div class="lg:w-2/5">
+          <div class="mb-6 bg-white p-5 rounded-xl shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-gray-700 font-medium text-xl">Price:</span>
+              <span class="text-red-600 font-bold text-3xl">$32,000</span>
             </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Brand:</span>
-              <span class="font-medium">{{ vehicleData.specifications.brand }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Model:</span>
-              <span class="font-medium">{{ vehicleData.specifications.model }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Year:</span>
-              <span class="font-medium">{{ vehicleData.specifications.year }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Mileage:</span>
-              <span class="font-medium">{{ vehicleData.specifications.mileage }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Condition:</span>
-              <span class="font-medium">{{ vehicleData.specifications.condition }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Fuel Type:</span>
-              <span class="font-medium">{{ vehicleData.specifications.fuelType }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Transmission:</span>
-              <span class="font-medium">{{ vehicleData.specifications.transmission }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Engine:</span>
-              <span class="font-medium">{{ vehicleData.specifications.engine }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Exterior Color:</span>
-              <span class="font-medium">{{ vehicleData.specifications.exteriorColor }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Interior Color:</span>
-              <span class="font-medium">{{ vehicleData.specifications.interiorColor }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">VIN:</span>
-              <span class="font-medium">{{ vehicleData.specifications.vin }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Drive Type:</span>
-              <span class="font-medium">{{ vehicleData.specifications.driveType }}</span>
-            </div>
-            <div class="flex border-b pb-2">
-              <span class="text-gray-600 w-40">Fuel Economy:</span>
-              <span class="font-medium">{{ vehicleData.specifications.fuelEconomy }}</span>
+            <div class="text-sm text-gray-500">
+              <p>Financing available with approved credit</p>
             </div>
           </div>
-        </div>
-        
-        <div class="bg-gray-50 p-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h4 class="text-lg font-semibold mb-3">Contact Information</h4>
-              <div class="space-y-3">
-                <div class="flex items-center bg-white p-3 rounded-lg shadow-sm">
-                  <div class="bg-primary/10 p-2 rounded-full mr-3">
-                    <Icon icon="mdi:phone" class="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p class="text-sm text-gray-500">Phone</p>
-                    <p class="font-medium">{{ vehicleData.contact.phone }}</p>
-                  </div>
+          <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Vehicle Details</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-4">
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500">Manufacturer</h3>
+                  <p class="text-gray-900 font-medium">Toyota</p>
                 </div>
-                <div class="flex items-center bg-white p-3 rounded-lg shadow-sm">
-                  <div class="bg-primary/10 p-2 rounded-full mr-3">
-                    <Icon icon="mdi:email" class="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p class="text-sm text-gray-500">Email</p>
-                    <p class="font-medium">{{ vehicleData.contact.email }}</p>
-                  </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500">Model</h3>
+                  <p class="text-gray-900 font-medium">Corolla Cross</p>
                 </div>
-                <div class="flex items-start bg-white p-3 rounded-lg shadow-sm">
-                  <div class="bg-primary/10 p-2 rounded-full mr-3 mt-0.5">
-                    <Icon icon="mdi:map-marker" class="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p class="text-sm text-gray-500">Address</p>
-                    <p class="font-medium">{{ vehicleData.contact.address }}</p>
-                  </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500">Package</h3>
+                  <p class="text-gray-900 font-medium">Hybrid Z</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500">Year</h3>
+                  <p class="text-gray-900 font-medium">2022</p>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500">Exterior Color</h3>
+                  <p class="text-gray-900 font-medium">Pearl</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500">Interior Color</h3>
+                  <p class="text-gray-900 font-medium">Black</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500">Chassis No</h3>
+                  <p class="text-gray-900 font-medium">276511</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500">Auditor Grade</h3>
+                  <p class="text-gray-900 font-medium">4.0</p>
                 </div>
               </div>
             </div>
-            
-            <div>
-              <h4 class="text-lg font-semibold mb-3">Send Inquiry</h4>
-              <form class="space-y-4" >
-                <div class="grid grid-cols-2 gap-3">
-                  <div>
-                    <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                  </div>
-                  <div>
-                    <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                  </div>
-                </div>
-                <div>
-                  <input type="tel" placeholder="Your Phone" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                </div>
-                <div>
-                  <textarea placeholder="Your Message" rows="3" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
-                </div>
-                <UButton label="Submit Inquiry" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center" @click="showToast" />
-                <!-- <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
-                  Submit Inquiry
-                </button> -->
-              </form>
+          </div>
+          <div class="space-y-4">
+            <button class="w-full bg-green-500 text-white py-3 rounded-xl hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2 font-medium shadow-md hover:shadow-lg">
+              <Icon icon="mdi:whatsapp" class="w-5 h-5" />
+              Chat Via WhatsApp
+            </button>
+
+            <div class="grid grid-cols-2 gap-3">
+              <button class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+                Book a Test Drive
+              </button>
+              <button class="bg-white border border-red-600 text-red-600 hover:bg-red-50 font-medium py-3 px-4 rounded-xl transition-all duration-300 shadow-sm hover:shadow-md">
+                Get a Quote
+              </button>
             </div>
+            
+            <button class="w-full bg-gray-800 hover:bg-gray-900 text-white font-medium py-3 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg">
+              Add to Compare
+            </button>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="h-px bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 my-12 max-w-7xl mx-auto"></div>
+
+    <section class="max-w-7xl mx-auto px-4 pb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Related Cars</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <CarCard 
+          v-for="car in carsDetails" 
+          :key="car.id" 
+          :car="car"
+          class="w-full transform hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-xl" 
+        />
+      </div>
+    </section>
   </section>
 </template>
+
+<style scoped>
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+</style>

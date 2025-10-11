@@ -23,12 +23,11 @@ const carOverview = [
     </div>
     
     <div class="flex flex-col lg:flex-row gap-8">
-      <div class="lg:w-2/3">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-6 gap-4">
           <div
             v-for="(item, index) in carOverview"
             :key="index"
-            class="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary"
+            class="bg-white rounded-xl p-2 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary"
           >
             <div class="flex items-start space-x-3">
               <div class="bg-blue-50 p-2 rounded-lg">
@@ -36,12 +35,11 @@ const carOverview = [
               </div>
               <div>
                 <p class="text-sm text-gray-500">{{ item.label }}</p>
-                <p class="font-semibold text-gray-800">{{ item.value }}</p>
+                <p class="font-semibold text-xs text-gray-800">{{ item.value }}</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
       
       <div class="lg:w-1/3">
         <div class="bg-white rounded-xl shadow-lg p-6 sticky top-6">
@@ -75,7 +73,7 @@ const carOverview = [
             <Icon icon="mdi:arrow-right" class="w-4 h-4 inline-block ml-1" />
           </a>
         </div>
-      </div>
+      </div> 
     </div>
   </section>
 </template>
