@@ -232,7 +232,7 @@ const handleSearch = (event) => {
                   <img :src="car.picture" :alt="car.makeModel" class="h-16 w-24 object-cover rounded-md">
                 </td>
                 <td class="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  <NuxtLink to="/StockList/stock-deatils">{{ car.stockId }}</NuxtLink>
+                  <NuxtLink to="/StockList/stock-details">{{ car.stockId }}</NuxtLink>
                 </td>
                 <td class="px-4 py-4 text-sm text-gray-900">{{ car.makeModel }}</td>
                 <td class="px-4 py-4 whitespace-nowrap">
